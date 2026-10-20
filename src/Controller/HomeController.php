@@ -104,7 +104,7 @@ final class HomeController
   <section class="section" id="contact">
     <div class="wrap contact-grid">
       <div><div class="eyebrow">Contact</div><h2>Parlons de ce que vous voulez créer.</h2><p>Pour préparer un premier échange, pensez à préciser le problème à résoudre, les personnes qui utiliseront la solution et les fonctionnalités les plus importantes.</p></div>
-      <div class="contact-card"><strong>Présentez votre projet</strong><p>Consultez le dépôt Hianpe ou contactez-nous en utilisant les coordonnées que vous souhaitez publier sur votre site. L'adresse de contact pourra être ajoutée ici dès qu'elle sera confirmée.</p><div class="contact-links"><a class="button" href="https://github.com/ChrisBOUONGOU/hianpe" target="_blank" rel="noreferrer">Dépôt Hianpe ↗</a><a class="button outline" href="https://github.com/ChrisBOUONGOU" target="_blank" rel="noreferrer">Profil GitHub ↗</a></div></div>
+      <div class="contact-card"><strong>Présentez votre projet</strong><p>Vous pouvez écrire directement à chrisbouk@outlook.fr pour présenter votre besoin, vos utilisateurs et les fonctionnalités recherchées.</p><div class="contact-links"><a class="button" href="mailto:chrisbouk@outlook.fr?subject=Demande%20de%20renseignements%20-%20Hianpe">Écrire à Hianpe ↗</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/hianpe" target="_blank" rel="noreferrer">Dépôt GitHub ↗</a></div><p style="margin:16px 0 0;font-size:.9rem"><strong>Courriel :</strong> <a href="mailto:chrisbouk@outlook.fr">chrisbouk@outlook.fr</a></p></div>
     </div>
   </section>
 </main>
