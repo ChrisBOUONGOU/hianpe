@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class ContactController
 {
-    #[Route('/contact', name: 'contact', methods: ['GET'])]
+    #[Route('/contact', name: 'contact', methods: ['GET', 'POST'])]
     public function __invoke(Request $request,
     EntityManagerInterface $entityManager): Response
     {
@@ -74,7 +74,7 @@ final class ContactController
 <div class="field"><label for="email">Votre adresse e-mail *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="vous@exemple.com"></div>
 <div class="field full"><label for="subject">Sujet de votre demande *</label><select id="subject" name="subject" required><option value="">Choisissez un sujet</option><option>Développement C# / .NET</option><option>Logiciel ou application sur mesure</option><option>Site web / application web</option><option>Maintenance ou correction</option><option>Automatisation</option><option>StageFlow</option><option>Autre demande</option></select></div>
 <div class="field full"><label for="message">Votre message *</label><textarea id="message" name="message" required minlength="10" maxlength="5000" placeholder="Décrivez votre projet, le problème à résoudre et les fonctionnalités souhaitées…"></textarea><span class="hint">Évitez d'inclure des mots de passe ou des informations confidentielles.</span></div>
-</div><div class="form-actions"><button class="button yellow" type="submit">Préparer mon e-mail ↗</button><a class="button outline" href="mailto:chrisbouk@outlook.fr">Écrire directement</a></div><p class="notice" id="form-status">
+</div><div class="form-actions"><button class="button yellow" type="submit">Envoyer ma demande ↗</button></div><p class="notice" id="form-status">
     Votre demande sera enregistrée après validation du formulaire.
 </p></form>
 </section></section>
