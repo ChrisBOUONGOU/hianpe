@@ -37,7 +37,7 @@ final class HomeController
     <a class="brand" href="#accueil" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
     <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     <nav class="navlinks" aria-label="Navigation principale">
-      <a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#approche">Notre approche</a><a class="button" href="#contact">Parlons de votre projet <span>↗</span></a>
+      <a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#approche">Notre approche</a><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
     </nav>
   </div>
 </header>
@@ -48,7 +48,7 @@ final class HomeController
         <div class="eyebrow">Développement logiciel & solutions numériques</div>
         <h1>Des idées solides.<br>Des logiciels <span>utiles.</span></h1>
         <p class="lead">Hianpe accompagne vos projets numériques avec des applications sur mesure, des outils métier et des solutions web conçues pour répondre à vos vrais besoins.</p>
-        <div class="actions"><a class="button" href="#contact">Parler de mon projet <span>↗</span></a><a class="button outline" href="#logiciels">Découvrir les logiciels ↓</a></div>
+        <div class="actions"><a class="button" href="/contact">Parler de mon projet <span>↗</span></a><a class="button outline" href="#logiciels">Découvrir les logiciels ↓</a></div>
         <div class="trustline"><span class="trustdot"></span>Solutions pensées pour être pratiques, fiables et évolutives.</div>
       </div>
       <div class="visual" aria-label="Illustration de développement logiciel">
@@ -67,12 +67,12 @@ final class HomeController
     <div class="wrap">
       <div class="section-head"><div><div class="eyebrow">Ce que nous faisons</div><h2>La bonne technologie<br>pour le bon problème.</h2></div><p>Du premier échange à la mise en production, nous privilégions des solutions claires, maintenables et adaptées à votre réalité.</p></div>
       <div class="cards">
-        <article class="service-card"><div class="service-icon">⌘</div><h3>Applications C# / .NET</h3><p>Logiciels métier, outils internes, automatisation de tâches et applications adaptées à vos processus.</p><a class="card-link" href="#contact">Décrire mon besoin <span>↗</span></a></article>
-        <article class="service-card"><div class="service-icon">▣</div><h3>Applications de bureau</h3><p>Interfaces desktop modernes avec Avalonia UI et .NET, pour créer des outils multiplateformes quand le projet s'y prête.</p><a class="card-link" href="#contact">Créer un logiciel <span>↗</span></a></article>
-        <article class="service-card"><div class="service-icon">⌘</div><h3>Sites et applications web</h3><p>Sites professionnels, interfaces web et applications Blazor ou ASP.NET Core orientées simplicité et performance.</p><a class="card-link" href="#contact">Lancer un projet web <span>↗</span></a></article>
-        <article class="service-card"><div class="service-icon">↻</div><h3>Maintenance & évolution</h3><p>Corrections, amélioration d'interfaces, refactorisation et ajout de fonctionnalités à un projet existant.</p><a class="card-link" href="#contact">Améliorer l'existant <span>↗</span></a></article>
-        <article class="service-card"><div class="service-icon">⚙</div><h3>Automatisation</h3><p>Réduisez les tâches répétitives grâce à des utilitaires et des flux de travail adaptés à votre équipe.</p><a class="card-link" href="#contact">Gagner du temps <span>↗</span></a></article>
-        <article class="service-card"><div class="service-icon">◇</div><h3>Conseil technique</h3><p>Choix d'architecture, cadrage de projet et accompagnement pour avancer avec des décisions techniques éclairées.</p><a class="card-link" href="#contact">Échanger avec Hianpe <span>↗</span></a></article>
+        <article class="service-card"><div class="service-icon">⌘</div><h3>Applications C# / .NET</h3><p>Logiciels métier, outils internes, automatisation de tâches et applications adaptées à vos processus.</p><a class="card-link" href="/contact">Décrire mon besoin <span>↗</span></a></article>
+        <article class="service-card"><div class="service-icon">▣</div><h3>Applications de bureau</h3><p>Interfaces desktop modernes avec Avalonia UI et .NET, pour créer des outils multiplateformes quand le projet s'y prête.</p><a class="card-link" href="/contact">Créer un logiciel <span>↗</span></a></article>
+        <article class="service-card"><div class="service-icon">⌘</div><h3>Sites et applications web</h3><p>Sites professionnels, interfaces web et applications Blazor ou ASP.NET Core orientées simplicité et performance.</p><a class="card-link" href="/contact">Lancer un projet web <span>↗</span></a></article>
+        <article class="service-card"><div class="service-icon">↻</div><h3>Maintenance & évolution</h3><p>Corrections, amélioration d'interfaces, refactorisation et ajout de fonctionnalités à un projet existant.</p><a class="card-link" href="/contact">Améliorer l'existant <span>↗</span></a></article>
+        <article class="service-card"><div class="service-icon">⚙</div><h3>Automatisation</h3><p>Réduisez les tâches répétitives grâce à des utilitaires et des flux de travail adaptés à votre équipe.</p><a class="card-link" href="/contact">Gagner du temps <span>↗</span></a></article>
+        <article class="service-card"><div class="service-icon">◇</div><h3>Conseil technique</h3><p>Choix d'architecture, cadrage de projet et accompagnement pour avancer avec des décisions techniques éclairées.</p><a class="card-link" href="/contact">Échanger avec Hianpe <span>↗</span></a></article>
       </div>
     </div>
   </section>
@@ -82,7 +82,7 @@ final class HomeController
       <div class="software-grid">
         <article class="software"><div class="software-top"><div class="software-mark">SF</div><span class="pill">Application desktop</span></div><h3>StageFlow</h3><p>Outil de présentation conçu pour accompagner les équipes et les églises dans la gestion de leurs diapositives et médias.</p><div class="software-meta"><span>C# / .NET</span><span>Avalonia UI</span><span>Windows · Linux prévu selon version</span></div><a class="button coming" href="https://github.com/ChrisBOUONGOU/StageFlow" target="_blank" rel="noreferrer">Suivre le projet sur GitHub ↗</a></article>
         <article class="software"><div class="software-top"><div class="software-mark">APP</div><span class="pill">Outils métier</span></div><h3>Utilitaires Hianpe</h3><p>Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.</p><div class="software-meta"><span>Outils pratiques</span><span>Versions à venir</span></div><span class="button coming">Bientôt disponible</span></article>
-        <article class="software"><div class="software-top"><div class="software-mark">DEV</div><span class="pill">Projets personnalisés</span></div><h3>Votre prochain logiciel</h3><p>Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.</p><div class="software-meta"><span>Sur mesure</span><span>C# / .NET</span></div><a class="button yellow" href="#contact">Présenter mon idée ↗</a></article>
+        <article class="software"><div class="software-top"><div class="software-mark">DEV</div><span class="pill">Projets personnalisés</span></div><h3>Votre prochain logiciel</h3><p>Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.</p><div class="software-meta"><span>Sur mesure</span><span>C# / .NET</span></div><a class="button yellow" href="/contact">Présenter mon idée ↗</a></article>
       </div>
       <p class="software-note">Note : aucun fichier d'installation n'est proposé ici tant qu'une version vérifiée n'est pas publiée. Les plateformes compatibles et les notes de version seront précisées sur chaque fiche de téléchargement.</p>
     </div>
@@ -99,7 +99,7 @@ final class HomeController
     </div>
   </section>
   <section class="section" style="padding-top:0">
-    <div class="wrap"><div class="cta-panel"><div><div class="eyebrow">Votre projet commence ici</div><h2>Et si on construisait quelque chose d'utile ?</h2><p>Présentez votre besoin, même s'il n'est encore qu'une idée. Nous pourrons définir ensemble la prochaine étape.</p></div><a class="button" href="#contact">Discuter de votre projet ↗</a></div></div>
+    <div class="wrap"><div class="cta-panel"><div><div class="eyebrow">Votre projet commence ici</div><h2>Et si on construisait quelque chose d'utile ?</h2><p>Présentez votre besoin, même s'il n'est encore qu'une idée. Nous pourrons définir ensemble la prochaine étape.</p></div><a class="button" href="/contact">Discuter de votre projet ↗</a></div></div>
   </section>
   <section class="section" id="contact">
     <div class="wrap contact-grid">
@@ -108,7 +108,7 @@ final class HomeController
     </div>
   </section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="#accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#contact">Contact</a></div></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="#accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="/contact">Contact</a></div></div></footer>
 <script>
   const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.navlinks');
   toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');toggle.textContent=open?'×':'☰'});
