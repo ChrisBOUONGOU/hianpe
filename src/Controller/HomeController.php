@@ -28,7 +28,8 @@ final class HomeController
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.step{border-top:2px solid var(--line);padding-top:20px}.step-number{font-size:.78rem;color:#8d711d;font-weight:900;letter-spacing:.12em}.step h3{margin:15px 0 8px;font-size:1.08rem}.step p{color:var(--muted);font-size:.9rem}.cta-panel{background:var(--yellow);border-radius:28px;padding:clamp(28px,5vw,58px);display:flex;align-items:center;justify-content:space-between;gap:28px}.cta-panel h2{font-size:clamp(2.1rem,4vw,3.6rem);line-height:1;letter-spacing:-.065em;max-width:680px;margin:14px 0}.cta-panel p{max-width:520px;margin-bottom:0;color:#51451f}.cta-panel .button{background:var(--ink);color:var(--white);border-color:var(--ink);white-space:nowrap}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.contact-grid h2{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;letter-spacing:-.06em}.contact-grid p{color:var(--muted);max-width:470px}.contact-card{background:var(--white);border:1px solid var(--line);padding:26px;border-radius:var(--radius)}.contact-card strong{display:block;font-size:1.05rem;margin-bottom:7px}.contact-card p{font-size:.9rem;margin-bottom:18px}.contact-links{display:flex;gap:10px;flex-wrap:wrap}.footer{background:var(--ink);color:var(--white);padding:28px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#aaa89e;font-size:.82rem}.footer-brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:850}.footer-brand img{width:30px;height:30px;object-fit:contain;background:var(--paper);border-radius:8px}.footer-links{display:flex;gap:18px}.footer a:hover{color:var(--yellow)}
     @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:25px}.hero{padding-top:60px}.visual{min-height:390px}.visual:before{right:10%;width:300px;height:300px}.visual-card{max-width:390px}.cards,.software-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.steps{grid-template-columns:repeat(2,1fr)}.cta-panel{align-items:flex-start;flex-direction:column}.contact-grid{grid-template-columns:1fr;gap:24px}}
     @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:72px}.brand img{width:40px;height:40px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.navlinks .button{align-self:flex-start}.hero{padding:48px 0 35px}h1{font-size:clamp(2.8rem,14vw,4.2rem)}.lead{font-size:1rem}.visual{min-height:360px}.visual:before{width:270px;height:270px;right:3%}.visual-card{padding:22px;width:calc(100% - 16px)}.tag-one{left:-3px;top:8px}.tag-two{right:-2px;bottom:6px}.section{padding:62px 0}.cards,.software-grid,.steps{grid-template-columns:1fr}.service-card{min-height:0}.software{min-height:280px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.cta-panel{border-radius:22px}}
-    .language-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 13px;font:inherit;font-size:.82rem;font-weight:850;cursor:pointer;white-space:nowrap}.language-toggle:hover{background:var(--yellow);border-color:var(--yellow)}\n    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    .language-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 13px;font:inherit;font-size:.82rem;font-weight:850;cursor:pointer;white-space:nowrap}.language-toggle:hover{background:var(--yellow);border-color:var(--yellow)}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
 <body>
@@ -200,7 +201,7 @@ final class HomeController
     "Contactez Hianpe pour votre projet de développement logiciel C#/.NET, application web ou assistance technique.":"Contact Hianpe about your C#/.NET software development project, web application or technical support.",
     "Contact — Hianpe":"Contact — Hianpe","Hianpe — Des solutions numériques qui vous ressemblent":"Hianpe — Digital solutions that fit your needs"
   };
-  const normalise = value => value.replace(/\\s+/g, ' ').trim();
+  const normalise = value => value.replace(/\s+/g, ' ').trim();
   function setLanguage(language) {
     document.documentElement.lang = language;
     document.querySelectorAll('.language-toggle').forEach(button => {
@@ -215,14 +216,14 @@ final class HomeController
       if (!current) continue;
       const translated = translations[current];
       if (language === 'en' && translated) {
-        const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
-        const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+        const leading = node.nodeValue.match(/^\s*/)?.[0] || '';
+        const trailing = node.nodeValue.match(/\s*$/)?.[0] || '';
         node.nodeValue = leading + translated + trailing;
       } else if (language === 'fr') {
         const french = Object.keys(translations).find(key => translations[key] === current);
         if (french) {
-          const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
-          const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+          const leading = node.nodeValue.match(/^\s*/)?.[0] || '';
+          const trailing = node.nodeValue.match(/\s*$/)?.[0] || '';
           node.nodeValue = leading + french + trailing;
         }
       }
