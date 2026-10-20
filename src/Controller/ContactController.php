@@ -26,7 +26,8 @@ final class ContactController
         $name = trim((string) $request->request->get('name', ''));
         $email = trim((string) $request->request->get('email', ''));
         $subject = trim((string) $request->request->get('subject', ''));
-        $message = trim((string) $request->request->get('message', ''));\n        $language = $request->request->get('language', 'fr') === 'en' ? 'en' : 'fr';
+        $message = trim((string) $request->request->get('message', ''));
+        $language = $request->request->get('language', 'fr') === 'en' ? 'en' : 'fr';
 
         if (
             $name === '' || strlen($name) > 150 ||
@@ -55,13 +56,19 @@ final class ContactController
         ->from('contact@www.hianpe.com')
         ->to('chrisbouk@outlook.fr')
         ->replyTo($email)
-        ->subject('[Hianpe] Nouvelle demande : ' . $subject)
+        ->subject(($language === 'en' ? '[Hianpe] New request: ' : '[Hianpe] Nouvelle demande : ') . $subject)
         ->text(
-            "Nouvelle demande reçue depuis le site Hianpe.\n\n"
-            . "Nom : " . $name . "\n"
-            . "Adresse e-mail : " . $email . "\n"
-            . "Sujet : " . $subject . "\n\n"
-            . "Message :\n" . $message
+            $language === 'en'
+                ? "New request received from the Hianpe website.\n\n"
+                    . "Name: " . $name . "\n"
+                    . "Email address: " . $email . "\n"
+                    . "Subject: " . $subject . "\n\n"
+                    . "Message:\n" . $message
+                : "Nouvelle demande reçue depuis le site Hianpe.\n\n"
+                    . "Nom : " . $name . "\n"
+                    . "Adresse e-mail : " . $email . "\n"
+                    . "Sujet : " . $subject . "\n\n"
+                    . "Message :\n" . $message
         );
 
     $mailer->send($notification);
@@ -207,7 +214,7 @@ if (params.get('mail_error') === '1') {
     "Contactez Hianpe pour votre projet de développement logiciel C#/.NET, application web ou assistance technique.":"Contact Hianpe about your C#/.NET software development project, web application or technical support.",
     "Contact — Hianpe":"Contact — Hianpe","Hianpe — Des solutions numériques qui vous ressemblent":"Hianpe — Digital solutions that fit your needs"
   };
-  const normalise = value => value.replace(/\\s+/g, ' ').trim();
+  const normalise = value => value.replace(/\s+/g, ' ').trim();
   function setLanguage(language) {
     document.documentElement.lang = language;
     document.querySelectorAll('.language-toggle').forEach(button => {
@@ -222,14 +229,14 @@ if (params.get('mail_error') === '1') {
       if (!current) continue;
       const translated = translations[current];
       if (language === 'en' && translated) {
-        const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
-        const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+        const leading = node.nodeValue.match(/^\s*/)?.[0] || '';
+        const trailing = node.nodeValue.match(/\s*$/)?.[0] || '';
         node.nodeValue = leading + translated + trailing;
       } else if (language === 'fr') {
         const french = Object.keys(translations).find(key => translations[key] === current);
         if (french) {
-          const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
-          const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+          const leading = node.nodeValue.match(/^\s*/)?.[0] || '';
+          const trailing = node.nodeValue.match(/\s*$/)?.[0] || '';
           node.nodeValue = leading + french + trailing;
         }
       }
