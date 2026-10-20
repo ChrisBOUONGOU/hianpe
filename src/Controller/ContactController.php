@@ -9,12 +9,17 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+
 
 final class ContactController
 {
     #[Route('/contact', name: 'contact', methods: ['GET', 'POST'])]
     public function __invoke(Request $request,
-    EntityManagerInterface $entityManager): Response
+    EntityManagerInterface $entityManager,
+    MailerInterface $mailer): Response
     {
 
     if ($request->isMethod('POST')) {
@@ -45,7 +50,30 @@ final class ContactController
         $entityManager->persist($contactMessage);
         $entityManager->flush();
 
-        return new RedirectResponse('/contact?sent=1');
+        try {
+    $notification = (new Email())
+        ->from('contact@www.hianpe.com')
+        ->to('chrisbouk@outlook.fr')
+        ->replyTo($email)
+        ->subject('[Hianpe] Nouvelle demande : ' . $subject)
+        ->text(
+            "Nouvelle demande reçue depuis le site Hianpe.\n\n"
+            . "Nom : " . $name . "\n"
+            . "Adresse e-mail : " . $email . "\n"
+            . "Sujet : " . $subject . "\n\n"
+            . "Message :\n" . $message
+        );
+
+    $mailer->send($notification);
+
+    return new RedirectResponse('/contact?sent=1');
+
+} catch (TransportExceptionInterface $exception) {
+    // La demande reste sauvegardée même si l'envoi échoue.
+    return new RedirectResponse('/contact?sent=1&mail_error=1');
+}
+
+       
     }
         return new Response(<<<'HTML'
 <!doctype html>
@@ -83,9 +111,15 @@ final class ContactController
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 const params = new URLSearchParams(window.location.search);
-if (params.get('sent') === '1') {
-    document.getElementById('form-status').textContent =
-        'Merci ! Votre demande a été enregistrée.';
+const status = document.getElementById('form-status');
+
+if (params.get('mail_error') === '1') {
+    status.textContent =
+        'Votre demande est enregistrée, mais l’e-mail n’a pas pu être envoyé.';
+
+} else if (params.get('sent') === '1') {
+    status.textContent =
+        'Merci ! Votre demande a été enregistrée et transmise.';
 }
 </script>
 </body></html>
