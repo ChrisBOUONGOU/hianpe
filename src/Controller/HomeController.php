@@ -28,7 +28,7 @@ final class HomeController
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.step{border-top:2px solid var(--line);padding-top:20px}.step-number{font-size:.78rem;color:#8d711d;font-weight:900;letter-spacing:.12em}.step h3{margin:15px 0 8px;font-size:1.08rem}.step p{color:var(--muted);font-size:.9rem}.cta-panel{background:var(--yellow);border-radius:28px;padding:clamp(28px,5vw,58px);display:flex;align-items:center;justify-content:space-between;gap:28px}.cta-panel h2{font-size:clamp(2.1rem,4vw,3.6rem);line-height:1;letter-spacing:-.065em;max-width:680px;margin:14px 0}.cta-panel p{max-width:520px;margin-bottom:0;color:#51451f}.cta-panel .button{background:var(--ink);color:var(--white);border-color:var(--ink);white-space:nowrap}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}.contact-grid h2{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;letter-spacing:-.06em}.contact-grid p{color:var(--muted);max-width:470px}.contact-card{background:var(--white);border:1px solid var(--line);padding:26px;border-radius:var(--radius)}.contact-card strong{display:block;font-size:1.05rem;margin-bottom:7px}.contact-card p{font-size:.9rem;margin-bottom:18px}.contact-links{display:flex;gap:10px;flex-wrap:wrap}.footer{background:var(--ink);color:var(--white);padding:28px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#aaa89e;font-size:.82rem}.footer-brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:850}.footer-brand img{width:30px;height:30px;object-fit:contain;background:var(--paper);border-radius:8px}.footer-links{display:flex;gap:18px}.footer a:hover{color:var(--yellow)}
     @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:25px}.hero{padding-top:60px}.visual{min-height:390px}.visual:before{right:10%;width:300px;height:300px}.visual-card{max-width:390px}.cards,.software-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.steps{grid-template-columns:repeat(2,1fr)}.cta-panel{align-items:flex-start;flex-direction:column}.contact-grid{grid-template-columns:1fr;gap:24px}}
     @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:72px}.brand img{width:40px;height:40px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.navlinks .button{align-self:flex-start}.hero{padding:48px 0 35px}h1{font-size:clamp(2.8rem,14vw,4.2rem)}.lead{font-size:1rem}.visual{min-height:360px}.visual:before{width:270px;height:270px;right:3%}.visual-card{padding:22px;width:calc(100% - 16px)}.tag-one{left:-3px;top:8px}.tag-two{right:-2px;bottom:6px}.section{padding:62px 0}.cards,.software-grid,.steps{grid-template-columns:1fr}.service-card{min-height:0}.software{min-height:280px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.cta-panel{border-radius:22px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    .language-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 13px;font:inherit;font-size:.82rem;font-weight:850;cursor:pointer;white-space:nowrap}.language-toggle:hover{background:var(--yellow);border-color:var(--yellow)}\n    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
 <body>
@@ -37,7 +37,7 @@ final class HomeController
     <a class="brand" href="#accueil" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
     <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     <nav class="navlinks" aria-label="Navigation principale">
-      <a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#approche">Notre approche</a><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
+      <a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
     </nav>
   </div>
 </header>
@@ -115,7 +115,149 @@ final class HomeController
   nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
   document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-</body>
+
+<script>
+(() => {
+  const translations = {
+    "Services":"Services","Logiciels":"Software","Notre approche":"Our approach",
+    "Parlons de votre projet":"Let's discuss your project",
+    "Développement logiciel & solutions numériques":"Software development & digital solutions",
+    "Des idées solides.":"Strong ideas.","Des logiciels ":"Software that is ",
+    "utiles.":"useful.","Hianpe accompagne vos projets numériques avec des applications sur mesure, des outils métier et des solutions web conçues pour répondre à vos vrais besoins.":"Hianpe supports your digital projects with custom applications, business tools and web solutions designed around your real needs.",
+    "Parler de mon projet":"Discuss my project","Découvrir les logiciels ↓":"Explore our software ↓",
+    "Solutions pensées pour être pratiques, fiables et évolutives.":"Practical, reliable and scalable solutions.",
+    "C# · .NET":"C# · .NET","// Une solution pensée pour vous":"// A solution designed for you",
+    "Sur mesure":"Custom-built","Vos besoins, votre outil":"Your needs, your tool",
+    "Évolutif":"Scalable","Conçu pour progresser":"Built to grow","Du concept au produit ✓":"From concept to product ✓",
+    "Ce que nous faisons":"What we do","La bonne technologie":"The right technology",
+    "pour le bon problème.":"for the right problem.",
+    "Du premier échange à la mise en production, nous privilégions des solutions claires, maintenables et adaptées à votre réalité.":"From the first conversation to launch, we focus on clear, maintainable solutions tailored to your needs.",
+    "Applications C# / .NET":"C# / .NET applications",
+    "Logiciels métier, outils internes, automatisation de tâches et applications adaptées à vos processus.":"Business software, internal tools, task automation and applications tailored to your workflows.",
+    "Décrire mon besoin":"Describe my needs","Applications de bureau":"Desktop applications",
+    "Interfaces desktop modernes avec Avalonia UI et .NET, pour créer des outils multiplateformes quand le projet s'y prête.":"Modern desktop interfaces with Avalonia UI and .NET, building cross-platform tools when appropriate.",
+    "Créer un logiciel":"Build software","Sites et applications web":"Websites and web applications",
+    "Sites professionnels, interfaces web et applications Blazor ou ASP.NET Core orientées simplicité et performance.":"Professional websites, web interfaces and Blazor or ASP.NET Core applications focused on simplicity and performance.",
+    "Lancer un projet web":"Start a web project","Maintenance & évolution":"Maintenance & improvements",
+    "Corrections, amélioration d'interfaces, refactorisation et ajout de fonctionnalités à un projet existant.":"Bug fixes, interface improvements, refactoring and new features for existing projects.",
+    "Améliorer l'existant":"Improve an existing project","Automatisation":"Automation",
+    "Réduisez les tâches répétitives grâce à des utilitaires et des flux de travail adaptés à votre équipe.":"Reduce repetitive tasks with utilities and workflows tailored to your team.",
+    "Gagner du temps":"Save time","Conseil technique":"Technical consulting",
+    "Choix d'architecture, cadrage de projet et accompagnement pour avancer avec des décisions techniques éclairées.":"Architecture choices, project scoping and guidance to help you make informed technical decisions.",
+    "Échanger avec Hianpe":"Talk to Hianpe","Catalogue Hianpe":"Hianpe catalogue",
+    "Des logiciels à découvrir.":"Software to explore.","Un catalogue qui grandit.":"A growing catalogue.",
+    "Retrouvez ici les applications publiées par Hianpe. Les liens de téléchargement seront ajoutés au fur et à mesure des versions officiellement disponibles.":"Explore applications published by Hianpe. Download links will be added as verified releases become available.",
+    "Application desktop":"Desktop application","Outil de présentation conçu pour accompagner les équipes et les églises dans la gestion de leurs diapositives et médias.":"Presentation software designed to help teams and churches manage slides and media.",
+    "Suivre le projet sur GitHub ↗":"Follow the project on GitHub ↗",
+    "Outils métier":"Business tools","Utilitaires Hianpe":"Hianpe utilities",
+    "Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.":"A collection of practical tools to simplify everyday tasks and improve productivity.",
+    "Versions à venir":"Coming soon","Bientôt disponible":"Coming soon",
+    "Projets personnalisés":"Custom projects","Votre prochain logiciel":"Your next software project",
+    "Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.":"Have an app idea or a specific need? Hianpe can explore building a solution tailored to you.",
+    "Présenter mon idée ↗":"Share my idea ↗",
+    "Note : aucun fichier d'installation n'est proposé ici tant qu'une version vérifiée n'est pas publiée. Les plateformes compatibles et les notes de version seront précisées sur chaque fiche de téléchargement.":"Note: installers are not offered here until a verified release is published. Supported platforms and release notes will be provided with each download.",
+    "Une méthode claire":"A clear process","Un projet bien cadré":"A well-defined project",
+    "avance mieux.":"moves forward.","Une collaboration simple, avec des étapes compréhensibles et une attention portée à l'utilité du résultat final.":"A straightforward collaboration, with clear steps and a focus on delivering useful results.",
+    "ÉTAPE 01":"STEP 01","Comprendre":"Understand","Nous clarifions vos objectifs, vos utilisateurs et les contraintes du projet.":"We clarify your goals, users and project constraints.",
+    "ÉTAPE 02":"STEP 02","Proposer":"Plan","Nous définissons une solution réaliste, les fonctionnalités et les priorités.":"We define a realistic solution, features and priorities.",
+    "ÉTAPE 03":"STEP 03","Construire":"Build","Le développement avance par étapes, avec des retours réguliers.":"Development progresses in stages, with regular feedback.",
+    "ÉTAPE 04":"STEP 04","Faire évoluer":"Improve","Nous préparons une base claire pour corriger, maintenir et améliorer le produit.":"We create a solid foundation to fix, maintain and improve the product.",
+    "Votre projet commence ici":"Your project starts here","Et si on construisait quelque chose d'utile ?":"What if we built something useful?",
+    "Présentez votre besoin, même s'il n'est encore qu'une idée. Nous pourrons définir ensemble la prochaine étape.":"Tell us what you need, even if it is only an idea. Together, we can define the next step.",
+    "Discuter de votre projet ↗":"Discuss your project ↗","Contact":"Contact",
+    "Parlons de ce que vous voulez créer.":"Let's talk about what you want to build.",
+    "Pour préparer un premier échange, pensez à préciser le problème à résoudre, les personnes qui utiliseront la solution et les fonctionnalités les plus importantes.":"To prepare for an initial conversation, describe the problem to solve, who will use the solution and the most important features.",
+    "Présentez votre projet":"Tell us about your project",
+    "Vous pouvez écrire directement à chrisbouk@outlook.fr pour présenter votre besoin, vos utilisateurs et les fonctionnalités recherchées.":"Email chrisbouk@outlook.fr directly to describe your needs, users and desired features.",
+    "Écrire à Hianpe ↗":"Email Hianpe ↗","Dépôt GitHub ↗":"GitHub repository ↗",
+    "Courriel :":"Email:","Des solutions numériques pensées pour durer.":"Digital solutions built to last.",
+    "Bientôt disponible":"Coming soon","Accueil ↗":"Home ↗","Retour à l'accueil":"Back to home",
+    "Contact Hianpe":"Contact Hianpe","Parlons de votre ":"Let's discuss your ",
+    "projet.":"project.","Une idée d'application, un logiciel à améliorer ou un besoin à automatiser ? Décrivez-nous votre objectif. Même si votre projet n'est pas encore entièrement défini, nous pouvons commencer par en discuter.":"An app idea, software to improve or a process to automate? Tell us what you want to achieve. Even if your project is not fully defined yet, we can start by talking it through.",
+    "Restons en contact":"Let's stay in touch","Un premier échange, simplement.":"Let's start with a conversation.",
+    "Quelques informations sur votre besoin nous aideront à mieux comprendre votre projet.":"A little information about your needs will help us better understand your project.",
+    "Adresse e-mail":"Email address","Domaines":"Areas of expertise",
+    "Développement C# / .NET, applications de bureau, solutions web, maintenance et automatisation.":"C# / .NET development, desktop applications, web solutions, maintenance and automation.",
+    "Pour gagner du temps":"To save time","Précisez le résultat attendu, les fonctionnalités prioritaires et, si vous en avez une, votre échéance.":"Tell us your expected outcome, priority features and, if applicable, your deadline.",
+    "← Retour à l'accueil":"← Back to home","Présentez votre besoin":"Tell us what you need",
+    "Remplissez les champs ci-dessous. Votre application de messagerie s'ouvrira avec le message préparé, prêt à être envoyé.":"Fill in the fields below. Your email application will open with a prepared message, ready to send.",
+    "Votre nom *":"Your name *","Nom et prénom":"Full name","Votre adresse e-mail *":"Your email address *",
+    "Sujet de votre demande *":"Request subject *","Choisissez un sujet":"Choose a subject",
+    "Développement C# / .NET":"C# / .NET development","Logiciel ou application sur mesure":"Custom software or application",
+    "Site web / application web":"Website / web application","Maintenance ou correction":"Maintenance or bug fix",
+    "Autre demande":"Other request","Votre message *":"Your message *",
+    "Décrivez votre projet, le problème à résoudre et les fonctionnalités souhaitées…":"Describe your project, the problem to solve and the features you need…",
+    "Évitez d'inclure des mots de passe ou des informations confidentielles.":"Do not include passwords or confidential information.",
+    "Envoyer ma demande ↗":"Send my request ↗","Votre demande sera enregistrée après validation du formulaire.":"Your request will be saved after the form is submitted.",
+    "Merci ! Votre demande a été enregistrée.":"Thank you! Your request has been saved.",
+    "Votre demande est enregistrée, mais l’e-mail n’a pas pu être envoyé.":"Your request was saved, but the email could not be sent.",
+    "Merci ! Votre demande a été enregistrée et transmise.":"Thank you! Your request has been saved and sent."
+  };
+  const attributes = {
+    "Ouvrir le menu":"Open menu","Fermer le menu":"Close menu",
+    "Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
+    "Hianpe conçoit des applications sur mesure en C#/.NET, des logiciels de bureau et des solutions web modernes.":"Hianpe builds custom C#/.NET applications, desktop software and modern web solutions.",
+    "Contactez Hianpe pour votre projet de développement logiciel C#/.NET, application web ou assistance technique.":"Contact Hianpe about your C#/.NET software development project, web application or technical support.",
+    "Contact — Hianpe":"Contact — Hianpe","Hianpe — Des solutions numériques qui vous ressemblent":"Hianpe — Digital solutions that fit your needs"
+  };
+  const normalise = value => value.replace(/\\s+/g, ' ').trim();
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+    document.querySelectorAll('.language-toggle').forEach(button => {
+      button.textContent = language === 'fr' ? 'EN' : 'FR';
+      button.setAttribute('aria-label', language === 'fr' ? 'Switch to English' : 'Passer en français');
+      button.setAttribute('title', language === 'fr' ? 'Switch to English' : 'Passer en français');
+    });
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const current = normalise(node.nodeValue);
+      if (!current) continue;
+      const translated = translations[current];
+      if (language === 'en' && translated) {
+        const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
+        const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+        node.nodeValue = leading + translated + trailing;
+      } else if (language === 'fr') {
+        const french = Object.keys(translations).find(key => translations[key] === current);
+        if (french) {
+          const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
+          const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+          node.nodeValue = leading + french + trailing;
+        }
+      }
+    }
+    document.querySelectorAll('[placeholder],[aria-label],[alt],[title],meta[name="description"]').forEach(element => {
+      const attrs = ['placeholder','aria-label','alt','title','content'];
+      attrs.forEach(attr => {
+        if (!element.hasAttribute(attr)) return;
+        const value = element.getAttribute(attr);
+        if (language === 'en' && attributes[value]) element.setAttribute(attr, attributes[value]);
+        if (language === 'fr') {
+          const french = Object.keys(attributes).find(key => attributes[key] === value);
+          if (french) element.setAttribute(attr, french);
+        }
+      });
+    });
+    document.title = language === 'en'
+      ? (location.pathname === '/contact' ? 'Contact — Hianpe' : 'Hianpe — Digital solutions that fit your needs')
+      : (location.pathname === '/contact' ? 'Contact — Hianpe' : 'Hianpe — Des solutions numériques qui vous ressemblent');
+    const languageField = document.getElementById('language-field');
+    if (languageField) languageField.value = language;
+    try { localStorage.setItem('hianpe-language', language); } catch (error) {}
+  }
+  document.querySelectorAll('.language-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const current = document.documentElement.lang === 'en' ? 'en' : 'fr';
+      setLanguage(current === 'fr' ? 'en' : 'fr');
+    });
+  });
+  let saved = 'fr';
+  try { saved = localStorage.getItem('hianpe-language') || 'fr'; } catch (error) {}
+  setLanguage(saved === 'en' ? 'en' : 'fr');
+})();
+</script>
+\n</body>
 </html>
 HTML
         , Response::HTTP_OK, ['Content-Type' => 'text/html; charset=UTF-8']);
