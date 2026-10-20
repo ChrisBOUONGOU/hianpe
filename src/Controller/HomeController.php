@@ -18,6 +18,8 @@ final class HomeController
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Hianpe conçoit des applications sur mesure en C#/.NET, des logiciels de bureau et des solutions web modernes.">
   <meta name="theme-color" content="#171714">
+  <link rel="icon" type="image/png" href="/assets/logo_hianpe.png">
+  <link rel="apple-touch-icon" href="/assets/logo_hianpe.png">
   <title>Hianpe — Des solutions numériques qui vous ressemblent</title>
   <style>
     :root{--ink:#171714;--paper:#f5f0e6;--cream:#e8dcc5;--yellow:#f5c542;--muted:#6f6b62;--line:rgba(23,23,20,.14);--white:#fffdf8;--radius:22px;--max:1160px}
