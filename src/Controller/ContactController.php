@@ -4,12 +4,49 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Entity\ContactMessage;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+
 
 final class ContactController
 {
     #[Route('/contact', name: 'contact', methods: ['GET'])]
-    public function __invoke(): Response
+    public function __invoke(Request $request,
+    EntityManagerInterface $entityManager): Response
     {
+
+    if ($request->isMethod('POST')) {
+        $name = trim((string) $request->request->get('name', ''));
+        $email = trim((string) $request->request->get('email', ''));
+        $subject = trim((string) $request->request->get('subject', ''));
+        $message = trim((string) $request->request->get('message', ''));
+
+        if (
+            $name === '' || strlen($name) > 150 ||
+            !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 180 ||
+            $subject === '' || strlen($subject) > 255 ||
+            strlen($message) < 10 || strlen($message) > 5000
+        ) {
+            return new Response(
+                'Formulaire invalide. Vérifiez les champs et réessayez.',
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
+        $contactMessage = new ContactMessage();
+        $contactMessage->setName($name);
+        $contactMessage->setEmail($email);
+        $contactMessage->setSubject($subject);
+        $contactMessage->setMessage($message);
+        $contactMessage->setCreatedAt(new \DateTimeImmutable());
+
+        $entityManager->persist($contactMessage);
+        $entityManager->flush();
+
+        return new RedirectResponse('/contact?sent=1');
+    }
         return new Response(<<<'HTML'
 <!doctype html>
 <html lang="fr">
@@ -32,18 +69,24 @@ final class ContactController
 <div class="info-item"><div class="info-label">Pour gagner du temps</div><p>Précisez le résultat attendu, les fonctionnalités prioritaires et, si vous en avez une, votre échéance.</p></div><a class="back" href="/">← Retour à l'accueil</a>
 </aside>
 <section class="form-card" aria-labelledby="form-title"><h2 id="form-title">Présentez votre besoin</h2><p class="form-intro">Remplissez les champs ci-dessous. Votre application de messagerie s'ouvrira avec le message préparé, prêt à être envoyé.</p>
-<form id="contact-form"><div class="form-grid">
+<form id="contact-form" action="/contact" method="post"><div class="form-grid">
 <div class="field"><label for="name">Votre nom *</label><input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Nom et prénom"></div>
 <div class="field"><label for="email">Votre adresse e-mail *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="vous@exemple.com"></div>
 <div class="field full"><label for="subject">Sujet de votre demande *</label><select id="subject" name="subject" required><option value="">Choisissez un sujet</option><option>Développement C# / .NET</option><option>Logiciel ou application sur mesure</option><option>Site web / application web</option><option>Maintenance ou correction</option><option>Automatisation</option><option>StageFlow</option><option>Autre demande</option></select></div>
 <div class="field full"><label for="message">Votre message *</label><textarea id="message" name="message" required minlength="10" maxlength="5000" placeholder="Décrivez votre projet, le problème à résoudre et les fonctionnalités souhaitées…"></textarea><span class="hint">Évitez d'inclure des mots de passe ou des informations confidentielles.</span></div>
-</div><div class="form-actions"><button class="button yellow" type="submit">Préparer mon e-mail ↗</button><a class="button outline" href="mailto:chrisbouk@outlook.fr">Écrire directement</a></div><p class="notice">Ce formulaire prépare un e-mail dans votre application de messagerie. Il n'envoie ni n'enregistre les données sur ce site.</p></form>
+</div><div class="form-actions"><button class="button yellow" type="submit">Préparer mon e-mail ↗</button><a class="button outline" href="mailto:chrisbouk@outlook.fr">Écrire directement</a></div><p class="notice" id="form-status">
+    Votre demande sera enregistrée après validation du formulaire.
+</p></form>
 </section></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><a href="/">Retour à l'accueil ↗</a></div></footer>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('contact-form').addEventListener('submit',function(event){event.preventDefault();if(!this.reportValidity())return;const d=new FormData(this);const body='Nom : '+String(d.get('name')).trim()+'\nAdresse e-mail : '+String(d.get('email')).trim()+'\nSujet : '+String(d.get('subject')).trim()+'\n\nMessage :\n'+String(d.get('message')).trim();window.location.href='mailto:chrisbouk@outlook.fr?subject='+encodeURIComponent('[Hianpe] '+String(d.get('subject')).trim())+'&body='+encodeURIComponent(body);});
+const params = new URLSearchParams(window.location.search);
+if (params.get('sent') === '1') {
+    document.getElementById('form-status').textContent =
+        'Merci ! Votre demande a été enregistrée.';
+}
 </script>
 </body></html>
 HTML
