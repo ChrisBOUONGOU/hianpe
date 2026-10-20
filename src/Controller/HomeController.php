@@ -156,7 +156,7 @@ final class HomeController
     "Suivre le projet sur GitHub ↗":"Follow the project on GitHub ↗",
     "Outils métier":"Business tools","Utilitaires Hianpe":"Hianpe utilities",
     "Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.":"A collection of practical tools to simplify everyday tasks and improve productivity.",
-    "Versions à venir":"Coming soon","Bientôt disponible":"Coming soon",
+    "Versions à venir":"Upcoming versions","Bientôt disponible":"Coming soon",
     "Projets personnalisés":"Custom projects","Votre prochain logiciel":"Your next software project",
     "Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.":"Have an app idea or a specific need? Hianpe can explore building a solution tailored to you.",
     "Présenter mon idée ↗":"Share my idea ↗",
@@ -262,7 +262,7 @@ final class HomeController
   setLanguage(saved === 'en' ? 'en' : 'fr');
 })();
 </script>
-\n</body>
+</body>
 </html>
 HTML
         , Response::HTTP_OK, ['Content-Type' => 'text/html; charset=UTF-8']);
