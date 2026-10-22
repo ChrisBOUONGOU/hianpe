@@ -108,7 +108,7 @@ final class StageFlowController
   <div><div class="eyebrow">Démo de présentation · Hianpe</div>
     <h1>Découvrez la démo.<br><span class="highlight">StageFlow.</span></h1>
     <p class="lead">Explorez l’interface et les principales fonctionnalités de StageFlow, un logiciel de présentation pensé pour les églises et les équipes. Cette page est une démo de présentation : les abonnements et les périodes d’essai ne sont pas encore disponibles.</p>
-    <div class="actions"><a class="button yellow" href="#captures">Découvrir la démo ↓</a><a class="button outline" href="#fonctionnalites">Voir les fonctionnalités</a></div>
+    <div class="actions"><a class="button yellow" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest" target="_blank" rel="noreferrer">Télécharger StageFlow pour Windows ↓</a><a class="button outline" href="#captures">Découvrir la démo</a><a class="button outline" href="#fonctionnalites">Voir les fonctionnalités</a></div>
     <div class="trust"><span class="dot"></span>Démo de présentation · Abonnements et essais à venir</div>
   </div>
   <div class="hero-art" aria-label="Aperçu illustratif de StageFlow">
@@ -142,7 +142,7 @@ final class StageFlowController
     <article><div class="num">ÉTAPE 04</div><h3>Améliorez</h3><p>Consultez les versions publiées pour retrouver les correctifs et les nouveautés.</p></article>
   </div>
 </div></section>
-<section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Démo en cours</div><h2>Découvrez les possibilités de StageFlow.</h2><p>Parcourez les fonctionnalités et les captures de l’interface. Les abonnements et les périodes d’essai seront annoncés lorsqu’ils seront prêts.</p></div><div class="actions"><a class="button" href="#captures">Voir les captures ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow" target="_blank" rel="noreferrer">Projet sur GitHub ↗</a></div></div></div></section>
+<section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Démo en cours</div><h2>Découvrez les possibilités de StageFlow.</h2><p>Parcourez les fonctionnalités et les captures de l’interface. Les abonnements et les périodes d’essai seront annoncés lorsqu’ils seront prêts.</p></div><div class="actions"><a class="button" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest" target="_blank" rel="noreferrer">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow" target="_blank" rel="noreferrer">Projet sur GitHub ↗</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
 <script>
