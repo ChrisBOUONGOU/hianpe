@@ -65,13 +65,21 @@ final class StageFlowController
     @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:20px}.hero{padding-top:60px}.hero-art{min-height:380px}.hero-art:before{right:12%;width:320px}.feature-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.workflow{grid-template-columns:repeat(2,1fr)}.cta{align-items:flex-start;flex-direction:column}}
     @media(max-width:600px){.wrap{width:calc(100% - 28px)}.nav{height:68px}.brand img{width:37px;height:37px}.navlinks{gap:12px;font-size:.8rem}.navlinks>a:first-child{display:none}.navlinks .button{padding:10px 13px;font-size:.78rem}.hero{padding:48px 0 35px}h1{font-size:clamp(3rem,14vw,4.5rem)}.lead{font-size:1rem}.hero-art{min-height:330px}.hero-art:before{width:260px}.mock-screen{padding:16px}.mock-slide{min-height:165px;padding:20px}.float{font-size:.8rem;padding:9px 12px}.section{padding:60px 0}.feature-grid,.gallery,.workflow{grid-template-columns:1fr}.feature{min-height:0}.gallery{gap:12px}.footer-inner{align-items:flex-start;flex-direction:column}.cta{border-radius:20px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
+  
+    .menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;padding:10px;font-size:1.15rem;cursor:pointer}
+    @media(max-width:620px){.nav{position:relative}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:100%;left:0;right:0;z-index:30;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.navlinks .button{align-self:flex-start}.navlinks a:not(.button){display:block}}
+</style>
 </head>
 <body>
-<header class="topbar"><div class="wrap nav">
-  <a class="brand" href="/"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe <span style="color:#8b7a49;font-weight:500">/ StageFlow</span></a>
-  <nav class="navlinks" aria-label="Navigation"><a href="#fonctionnalites">Fonctionnalités</a><a href="#captures">Captures</a><a href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Versions ↗</a><a class="button" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger ↓</a></nav>
-</div></header>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="navlinks" aria-label="Navigation principale">
+      <a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
+    </nav>
+  </div>
+</header>
 <main>
 <section class="hero"><div class="wrap hero-grid">
   <div><div class="eyebrow">Logiciel de présentation · Hianpe</div>
@@ -114,7 +122,25 @@ final class StageFlowController
 <section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Prêt à essayer ?</div><h2>Préparez votre prochaine présentation avec StageFlow.</h2><p>Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.</p></div><div class="actions"><a class="button" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><span class="footer-brand">Hianpe · StageFlow</span><span>© <span id="year"></span> Hianpe. Tous droits réservés.</span><a href="/">Retour au site Hianpe ↗</a></div></footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.navlinks');
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    menuToggle.textContent = isOpen ? '✕' : '☰';
+  });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    menu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+    menuToggle.textContent = '☰';
+  }));
+}
+</script>
 </body></html>
 HTML
         , Response::HTTP_OK, ['Content-Type' => 'text/html; charset=UTF-8']);
