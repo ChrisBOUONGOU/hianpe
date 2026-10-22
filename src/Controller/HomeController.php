@@ -87,7 +87,7 @@ final class HomeController
         <article class="software"><div class="software-top"><div class="software-mark">APP</div><span class="pill">Outils métier</span></div><h3>Utilitaires Hianpe</h3><p>Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.</p><div class="software-meta"><span>Outils pratiques</span><span>Versions à venir</span></div><span class="button coming">Bientôt disponible</span></article>
         <article class="software"><div class="software-top"><div class="software-mark">DEV</div><span class="pill">Projets personnalisés</span></div><h3>Votre prochain logiciel</h3><p>Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.</p><div class="software-meta"><span>Sur mesure</span><span>C# / .NET</span></div><a class="button yellow" href="/contact">Présenter mon idée ↗</a></article>
       </div>
-      <p class="software-note">Le téléchargement Windows sera actif dès que le programme d’installation StageFlow-Setup.exe sera ajouté à une version publiée dans GitHub Releases. Consultez les versions pour suivre les mises à jour.</p>
+      <p class="software-note">Téléchargez la version Windows de StageFlow depuis GitHub Releases. Consultez les notes de version pour découvrir les nouveautés et les mises à jour.</p>
     </div>
   </section>
   <section class="section" id="approche">
@@ -162,7 +162,7 @@ final class HomeController
     "Projets personnalisés":"Custom projects","Votre prochain logiciel":"Your next software project",
     "Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.":"Have an app idea or a specific need? Hianpe can explore building a solution tailored to you.",
     "Présenter mon idée ↗":"Share my idea ↗",
-    "Le téléchargement Windows sera actif dès que le programme d’installation StageFlow-Setup.exe sera ajouté à une version publiée dans GitHub Releases. Consultez les versions pour suivre les mises à jour.":"The Windows download will become active once StageFlow-Setup.exe is attached to a published GitHub Release. Visit releases to follow updates.",
+    "Téléchargez la version Windows de StageFlow depuis GitHub Releases. Consultez les notes de version pour découvrir les nouveautés et les mises à jour.":"Download the Windows version of StageFlow from GitHub Releases. Check the release notes for new features and updates.",
     "Une méthode claire":"A clear process","Un projet bien cadré":"A well-defined project",
     "avance mieux.":"moves forward.","Une collaboration simple, avec des étapes compréhensibles et une attention portée à l'utilité du résultat final.":"A straightforward collaboration, with clear steps and a focus on delivering useful results.",
     "ÉTAPE 01":"STEP 01","Comprendre":"Understand","Nous clarifions vos objectifs, vos utilisateurs et les contraintes du projet.":"We clarify your goals, users and project constraints.",
