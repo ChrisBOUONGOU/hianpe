@@ -15,7 +15,7 @@ final class StageFlowController
         $files = [];
 
         if (is_dir($screenshotsDir)) {
-            foreach (['*.png', '*.jpg', '*.jpeg', '*.webp', '*.gif'] as $pattern) {
+            foreach (['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG', '*.webp', '*.WEBP', '*.gif', '*.GIF'] as $pattern) {
                 foreach (glob($screenshotsDir . '/' . $pattern) ?: [] as $file) {
                     if (is_file($file)) {
                         $files[] = basename($file);
