@@ -164,6 +164,107 @@ if (menuToggle && menu) {
   }));
 }
 </script>
+<script>
+(() => {
+  const translations = {
+    "Services":"Services","Logiciels":"Software","Notre approche":"Our approach",
+    "Parlons de votre projet":"Let's discuss your project",
+    "Développement logiciel & solutions numériques":"Software development & digital solutions",
+    "Logiciel de présentation · Hianpe":"Presentation software · Hianpe",
+    "Vos présentations.":"Your presentations.","Votre ":"Your ","message.":"message.",
+    "StageFlow aide les églises et les équipes de présentation à organiser leurs diapositives, paroles, passages bibliques et médias dans un flux de travail simple.":"StageFlow helps churches and presentation teams organize slides, lyrics, Bible passages and media in a simple workflow.",
+    "Télécharger StageFlow pour Windows ↓":"Download StageFlow for Windows ↓",
+    "Voir les captures":"View screenshots","Version Windows disponible · Consultez les notes de version sur GitHub":"Windows version available · See release notes on GitHub",
+    "Diapositives + médias":"Slides + media","Pensé pour le direct ✓":"Designed for live presentations ✓",
+    "Fonctionnalités":"Features","Tout le nécessaire pour guider votre présentation.":"Everything you need to guide your presentation.",
+    "Un espace de travail pour préparer le contenu et le diffuser avec plus de clarté pendant votre événement ou votre culte.":"A workspace to prepare content and display it clearly during your event or service.",
+    "Diapositives et texte":"Slides and text","Préparez vos diapositives et mettez en forme le texte pour rendre chaque message lisible à l’écran.":"Prepare slides and format text to make every message easy to read on screen.",
+    "Paroles et chants":"Lyrics and songs","Organisez les paroles et faites avancer le contenu au rythme de votre présentation.":"Organize lyrics and advance content in time with your presentation.",
+    "Passages bibliques":"Bible passages","Préparez des diapositives de versets pour intégrer les références bibliques à votre déroulement.":"Prepare verse slides and integrate Bible references into your service or event.",
+    "Images et vidéos":"Images and videos","Importez vos médias dans votre projet et utilisez-les au fil de la présentation.":"Import media into your project and use it throughout your presentation.",
+    "Affichage en direct":"Live display","Passez du contenu préparé à l’affichage de présentation pour accompagner votre équipe en direct.":"Switch from prepared content to presentation view to support your team live.",
+    "Projets réutilisables":"Reusable projects","Enregistrez et réouvrez vos projets pour préparer vos prochaines présentations plus efficacement.":"Save and reopen projects to prepare future presentations more efficiently.",
+    "Dans l’application":"Inside the app","Découvrez StageFlow en images.":"Explore StageFlow in screenshots.",
+    "Des captures de l’interface pour vous familiariser avec l’espace de travail et ses outils.":"Screenshots of the interface to help you get familiar with the workspace and its tools.",
+    "Les captures d’écran arrivent ici.":"Screenshots will appear here.",
+    "Ajoutez les images dans":"Add images to",
+    "La galerie les affichera automatiquement.":"The gallery will display them automatically.",
+    "capture de l’application":"application screenshot","captures de l’application":"application screenshots",
+    "Sélectionnez une image pour l’ouvrir en grand.":"Select an image to view it full size.",
+    "Comment commencer":"Getting started","De la préparation à la présentation.":"From preparation to presentation.",
+    "Préparez votre contenu avant l’événement, puis concentrez-vous sur le déroulement au moment voulu.":"Prepare your content before the event, then focus on delivering it when the time comes.",
+    "ÉTAPE 01":"STEP 01","ÉTAPE 02":"STEP 02","ÉTAPE 03":"STEP 03","ÉTAPE 04":"STEP 04",
+    "Préparez":"Prepare","Créez un projet et ajoutez les diapositives, paroles et passages dont vous avez besoin.":"Create a project and add the slides, lyrics and passages you need.",
+    "Organisez":"Organize","Ajoutez vos images et vidéos, puis vérifiez l’ordre et la lisibilité du contenu.":"Add images and videos, then check the order and readability of your content.",
+    "Présentez":"Present","Ouvrez le mode Présentation et faites avancer le contenu au fil de votre programme.":"Open Presentation mode and advance content as your program unfolds.",
+    "Améliorez":"Improve","Consultez les versions publiées pour retrouver les correctifs et les nouveautés.":"Check published releases for fixes and new features.",
+    "Prêt à essayer ?":"Ready to try it?",
+    "Préparez votre prochaine présentation avec StageFlow.":"Prepare your next presentation with StageFlow.",
+    "Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.":"Download the Windows installer or browse all releases and release notes on GitHub.",
+    "Télécharger pour Windows ↓":"Download for Windows ↓","Toutes les versions ↗":"All releases ↗",
+    "Hianpe. Des solutions numériques pensées pour durer.":"Hianpe. Digital solutions built to last.",
+    "Ouvrir le menu":"Open menu","Fermer le menu":"Close menu","Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
+    "Ouvrir la capture":"Open screenshot",
+    "Les captures d’écran arrivent ici.":"Screenshots will appear here."
+  };
+  const attributes = {
+    "Ouvrir le menu":"Open menu","Fermer le menu":"Close menu",
+    "Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
+    "Ouvrir la capture":"Open screenshot",
+    "StageFlow — Présentation | Hianpe":"StageFlow — Presentation | Hianpe",
+    "Découvrez StageFlow, un logiciel de présentation pour les églises et les équipes : diapositives, paroles, Bible et médias dans un flux de travail simple.":"Discover StageFlow, presentation software for churches and teams: slides, lyrics, Bible passages and media in a simple workflow."
+  };
+  const normalise = value => value.replace(/\\s+/g, ' ').trim();
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+    document.querySelectorAll('.language-toggle').forEach(button => {
+      button.textContent = language === 'fr' ? 'EN' : 'FR';
+      button.setAttribute('aria-label', language === 'fr' ? 'Switch to English' : 'Passer en français');
+      button.setAttribute('title', language === 'fr' ? 'Switch to English' : 'Passer en français');
+    });
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const current = normalise(node.nodeValue);
+      if (!current) continue;
+      const translated = translations[current];
+      if (language === 'en' && translated) {
+        const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
+        const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+        node.nodeValue = leading + translated + trailing;
+      } else if (language === 'fr') {
+        const french = Object.keys(translations).find(key => translations[key] === current);
+        if (french) {
+          const leading = node.nodeValue.match(/^\\s*/)?.[0] || '';
+          const trailing = node.nodeValue.match(/\\s*$/)?.[0] || '';
+          node.nodeValue = leading + french + trailing;
+        }
+      }
+    }
+    document.querySelectorAll('[placeholder],[aria-label],[alt],[title],meta[name="description"]').forEach(element => {
+      ['placeholder','aria-label','alt','title','content'].forEach(attr => {
+        if (!element.hasAttribute(attr)) return;
+        const value = element.getAttribute(attr);
+        if (language === 'en' && attributes[value]) element.setAttribute(attr, attributes[value]);
+        if (language === 'fr') {
+          const french = Object.keys(attributes).find(key => attributes[key] === value);
+          if (french) element.setAttribute(attr, french);
+        }
+      });
+    });
+    document.title = language === 'en' ? 'StageFlow — Presentation | Hianpe' : 'StageFlow — Présentation | Hianpe';
+    try { localStorage.setItem('hianpe-language', language); } catch (error) {}
+  }
+  document.querySelectorAll('.language-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      setLanguage(document.documentElement.lang === 'en' ? 'fr' : 'en');
+    });
+  });
+  let saved = 'fr';
+  try { saved = localStorage.getItem('hianpe-language') || 'fr'; } catch (error) {}
+  setLanguage(saved === 'en' ? 'en' : 'fr');
+})();
+</script>
 </body></html>
 HTML
         , Response::HTTP_OK, ['Content-Type' => 'text/html; charset=UTF-8']);
