@@ -48,9 +48,9 @@ final class StageFlowController
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Découvrez StageFlow, un logiciel de présentation pour les églises et les équipes : diapositives, paroles, Bible et médias dans un flux de travail simple.">
+  <meta name="description" content="Découvrez la démo de StageFlow, un logiciel de présentation pour les églises. Les abonnements et les périodes d’essai ne sont pas encore disponibles.">
   <meta name="theme-color" content="#171714">
-  <title>StageFlow — Présentation | Hianpe</title>
+  <title>StageFlow — Démo | Hianpe</title>
   <link rel="icon" type="image/png" href="/assets/logo_hianpe.png">
   <style>
     :root{--ink:#171714;--paper:#f5f0e6;--cream:#e8dcc5;--yellow:#f5c542;--muted:#6f6b62;--line:rgba(23,23,20,.14);--white:#fffdf8;--max:1160px}
@@ -105,15 +105,15 @@ final class StageFlowController
 </header>
 <main>
 <section class="hero"><div class="wrap hero-grid">
-  <div><div class="eyebrow">Logiciel de présentation · Hianpe</div>
-    <h1>Vos présentations.<br>Votre <span class="highlight">message.</span></h1>
-    <p class="lead">StageFlow aide les églises et les équipes de présentation à organiser leurs diapositives, paroles, passages bibliques et médias dans un flux de travail simple.</p>
-    <div class="actions"><a class="button yellow" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger StageFlow pour Windows ↓</a><a class="button outline" href="#captures">Voir les captures</a></div>
-    <div class="trust"><span class="dot"></span>Version Windows disponible · Consultez les notes de version sur GitHub</div>
+  <div><div class="eyebrow">Démo de présentation · Hianpe</div>
+    <h1>Découvrez la démo.<br><span class="highlight">StageFlow.</span></h1>
+    <p class="lead">Explorez l’interface et les principales fonctionnalités de StageFlow, un logiciel de présentation pensé pour les églises et les équipes. Cette page est une démo de présentation : les abonnements et les périodes d’essai ne sont pas encore disponibles.</p>
+    <div class="actions"><a class="button yellow" href="#captures">Découvrir la démo ↓</a><a class="button outline" href="#fonctionnalites">Voir les fonctionnalités</a></div>
+    <div class="trust"><span class="dot"></span>Démo de présentation · Abonnements et essais à venir</div>
   </div>
   <div class="hero-art" aria-label="Aperçu illustratif de StageFlow">
     <span class="float one">Diapositives + médias</span>
-    <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-screen"><div class="mock-label">STAGEFLOW / PRÉSENTATION</div><div class="mock-slide"><small>VOTRE MESSAGE</small><strong>Une présentation claire.<br>Un moment mieux partagé.</strong></div><div class="mock-controls"><span></span><span></span><span></span><span></span></div></div></div>
+    <div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-screen"><div class="mock-label">STAGEFLOW / DÉMO</div><div class="mock-slide"><small>VOTRE MESSAGE</small><strong>Une présentation claire.<br>Un moment mieux partagé.</strong></div><div class="mock-controls"><span></span><span></span><span></span><span></span></div></div></div>
     <span class="float two">Pensé pour le direct ✓</span>
   </div>
 </div></section>
@@ -142,7 +142,7 @@ final class StageFlowController
     <article><div class="num">ÉTAPE 04</div><h3>Améliorez</h3><p>Consultez les versions publiées pour retrouver les correctifs et les nouveautés.</p></article>
   </div>
 </div></section>
-<section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Prêt à essayer ?</div><h2>Préparez votre prochaine présentation avec StageFlow.</h2><p>Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.</p></div><div class="actions"><a class="button" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></div></div></section>
+<section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Démo en cours</div><h2>Découvrez les possibilités de StageFlow.</h2><p>Parcourez les fonctionnalités et les captures de l’interface. Les abonnements et les périodes d’essai seront annoncés lorsqu’ils seront prêts.</p></div><div class="actions"><a class="button" href="#captures">Voir les captures ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow" target="_blank" rel="noreferrer">Projet sur GitHub ↗</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
 <script>
@@ -170,10 +170,10 @@ if (menuToggle && menu) {
     "Services":"Services","Logiciels":"Software","Notre approche":"Our approach",
     "Parlons de votre projet":"Let's discuss your project",
     "Développement logiciel & solutions numériques":"Software development & digital solutions",
-    "Logiciel de présentation · Hianpe":"Presentation software · Hianpe",
-    "Vos présentations.":"Your presentations.","Vos":"Your","Votre":"Your","message.":"message.",
-    "StageFlow aide les églises et les équipes de présentation à organiser leurs diapositives, paroles, passages bibliques et médias dans un flux de travail simple.":"StageFlow helps churches and presentation teams organize slides, lyrics, Bible passages and media in a simple workflow.",
-    "Télécharger StageFlow pour Windows ↓":"Download StageFlow for Windows ↓",
+    "Logiciel de présentation · Hianpe":"Presentation software · Hianpe","Démo de présentation · Hianpe":"Presentation demo · Hianpe",
+    "Vos présentations.":"Your presentations.","Vos":"Your","Votre":"Your","message.":"message.","Découvrez la démo.":"Explore the demo.","Découvrez la démo":"Explore the demo","StageFlow.":"StageFlow.",
+    "StageFlow aide les églises et les équipes de présentation à organiser leurs diapositives, paroles, passages bibliques et médias dans un flux de travail simple.":"StageFlow helps churches and presentation teams organize slides, lyrics, Bible passages and media in a simple workflow.","Explorez l’interface et les principales fonctionnalités de StageFlow, un logiciel de présentation pensé pour les églises et les équipes. Cette page est une démo de présentation : les abonnements et les périodes d’essai ne sont pas encore disponibles.":"Explore StageFlow’s interface and key features, presentation software designed for churches and teams. This is a product demo page; subscriptions and free trials are not available yet.",
+    "Télécharger StageFlow pour Windows ↓":"Download StageFlow for Windows ↓","Découvrir la démo ↓":"Explore the demo ↓","Voir les fonctionnalités":"View features","Démo de présentation · Abonnements et essais à venir":"Product demo · Subscriptions and trials coming later",
     "Voir les captures":"View screenshots","Version Windows disponible · Consultez les notes de version sur GitHub":"Windows version available · See release notes on GitHub",
     "Diapositives + médias":"Slides + media","Pensé pour le direct ✓":"Designed for live presentations ✓",
     "Fonctionnalités":"Features","Tout le nécessaire pour guider votre présentation.":"Everything you need to guide your presentation.",
@@ -198,7 +198,7 @@ if (menuToggle && menu) {
     "Organisez":"Organize","Ajoutez vos images et vidéos, puis vérifiez l’ordre et la lisibilité du contenu.":"Add images and videos, then check the order and readability of your content.",
     "Présentez":"Present","Ouvrez le mode Présentation et faites avancer le contenu au fil de votre programme.":"Open Presentation mode and advance content as your program unfolds.",
     "Améliorez":"Improve","Consultez les versions publiées pour retrouver les correctifs et les nouveautés.":"Check published releases for fixes and new features.",
-    "Prêt à essayer ?":"Ready to try it?",
+    "Prêt à essayer ?":"Ready to try it?","Démo en cours":"Demo in progress","Découvrez les possibilités de StageFlow.":"Explore what StageFlow can do.","Parcourez les fonctionnalités et les captures de l’interface. Les abonnements et les périodes d’essai seront annoncés lorsqu’ils seront prêts.":"Explore the features and interface screenshots. Subscriptions and free trials will be announced when they are ready.","Voir les captures ↓":"View screenshots ↓","Projet sur GitHub ↗":"Project on GitHub ↗",
     "Préparez votre prochaine présentation avec StageFlow.":"Prepare your next presentation with StageFlow.",
     "Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.":"Download the Windows installer or browse all releases and release notes on GitHub.",
     "Télécharger pour Windows ↓":"Download for Windows ↓","Toutes les versions ↗":"All releases ↗",
@@ -211,7 +211,7 @@ if (menuToggle && menu) {
     "Ouvrir le menu":"Open menu","Fermer le menu":"Close menu",
     "Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
     "Ouvrir la capture":"Open screenshot",
-    "StageFlow — Présentation | Hianpe":"StageFlow — Presentation | Hianpe",
+    "StageFlow — Présentation | Hianpe":"StageFlow — Demo | Hianpe",
     "Découvrez StageFlow, un logiciel de présentation pour les églises et les équipes : diapositives, paroles, Bible et médias dans un flux de travail simple.":"Discover StageFlow, presentation software for churches and teams: slides, lyrics, Bible passages and media in a simple workflow."
   };
   const normalise = value => value.replace(/\\s+/g, ' ').trim();
@@ -257,7 +257,7 @@ if (menuToggle && menu) {
       const count = Number(galleryLabel.dataset.count || 0);
       galleryLabel.textContent = language === 'en' ? count + ' application screenshot' + (count === 1 ? '' : 's') : count + ' capture' + (count > 1 ? 's' : '') + ' de l’application';
     }
-    document.title = language === 'en' ? 'StageFlow — Presentation | Hianpe' : 'StageFlow — Présentation | Hianpe';
+    document.title = language === 'en' ? 'StageFlow — Demo | Hianpe' : 'StageFlow — Démo | Hianpe';
     try { localStorage.setItem('hianpe-language', language); } catch (error) {}
   }
   document.querySelectorAll('.language-toggle').forEach(button => {
