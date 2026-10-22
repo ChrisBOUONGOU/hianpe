@@ -241,7 +241,7 @@ if (params.get('mail_error') === '1') {
     "Sujet de votre demande *":"Request subject *","Choisissez un sujet":"Choose a subject",
     "Développement C# / .NET":"C# / .NET development","Logiciel ou application sur mesure":"Custom software or application",
     "Site web / application web":"Website / web application","Maintenance ou correction":"Maintenance or bug fix",
-    "Autre demande":"Other request","Votre message *":"Your message *",
+    "Autre demande":"Other request","Votre message *":"Your message *","Votre message.":"Your message.","Votre message":"Your message",
     "Décrivez votre projet, le problème à résoudre et les fonctionnalités souhaitées…":"Describe your project, the problem to solve and the features you need…",
     "Évitez d'inclure des mots de passe ou des informations confidentielles.":"Do not include passwords or confidential information.",
     "Envoyer ma demande ↗":"Send my request ↗","Votre demande sera enregistrée après validation du formulaire.":"Your request will be saved after the form is submitted.",
