@@ -131,7 +131,7 @@ final class StageFlowController
 <section class="section dark" id="captures"><div class="wrap">
   <div class="section-head"><div><div class="eyebrow">Dans l’application</div><h2>Découvrez StageFlow en images.</h2></div><p>Des captures de l’interface pour vous familiariser avec l’espace de travail et ses outils.</p></div>
   <div class="gallery">$gallery</div>
-  <p class="gallery-caption">$galleryLabel · Sélectionnez une image pour l’ouvrir en grand.</p>
+  <p class="gallery-caption"><span id="gallery-label" data-count="$count">$galleryLabel</span> · <span>Sélectionnez une image pour l’ouvrir en grand.</span></p>
 </div></section>
 <section class="section dark" style="padding-top:0"><div class="wrap">
   <div class="section-head"><div><div class="eyebrow">Comment commencer</div><h2>De la préparation à la présentation.</h2></div><p>Préparez votre contenu avant l’événement, puis concentrez-vous sur le déroulement au moment voulu.</p></div>
@@ -171,7 +171,7 @@ if (menuToggle && menu) {
     "Parlons de votre projet":"Let's discuss your project",
     "Développement logiciel & solutions numériques":"Software development & digital solutions",
     "Logiciel de présentation · Hianpe":"Presentation software · Hianpe",
-    "Vos présentations.":"Your presentations.","Votre ":"Your ","message.":"message.",
+    "Vos présentations.":"Your presentations.","Vos ":"Your ","message.":"message.",
     "StageFlow aide les églises et les équipes de présentation à organiser leurs diapositives, paroles, passages bibliques et médias dans un flux de travail simple.":"StageFlow helps churches and presentation teams organize slides, lyrics, Bible passages and media in a simple workflow.",
     "Télécharger StageFlow pour Windows ↓":"Download StageFlow for Windows ↓",
     "Voir les captures":"View screenshots","Version Windows disponible · Consultez les notes de version sur GitHub":"Windows version available · See release notes on GitHub",
@@ -188,7 +188,7 @@ if (menuToggle && menu) {
     "Des captures de l’interface pour vous familiariser avec l’espace de travail et ses outils.":"Screenshots of the interface to help you get familiar with the workspace and its tools.",
     "Les captures d’écran arrivent ici.":"Screenshots will appear here.",
     "Ajoutez les images dans":"Add images to",
-    "La galerie les affichera automatiquement.":"The gallery will display them automatically.",
+    ", puis envoyez ce dossier sur GitHub. La galerie les affichera automatiquement.":", then upload that folder to GitHub. The gallery will display it automatically.",
     "capture de l’application":"application screenshot","captures de l’application":"application screenshots",
     "Sélectionnez une image pour l’ouvrir en grand.":"Select an image to view it full size.",
     "Comment commencer":"Getting started","De la préparation à la présentation.":"From preparation to presentation.",
@@ -252,6 +252,11 @@ if (menuToggle && menu) {
         }
       });
     });
+    const galleryLabel = document.getElementById('gallery-label');
+    if (galleryLabel) {
+      const count = Number(galleryLabel.dataset.count || 0);
+      galleryLabel.textContent = language === 'en' ? count + ' application screenshot' + (count === 1 ? '' : 's') : count + ' capture' + (count > 1 ? 's' : '') + ' de l’application';
+    }
     document.title = language === 'en' ? 'StageFlow — Presentation | Hianpe' : 'StageFlow — Présentation | Hianpe';
     try { localStorage.setItem('hianpe-language', language); } catch (error) {}
   }
