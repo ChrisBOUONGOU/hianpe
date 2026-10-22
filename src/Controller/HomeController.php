@@ -156,6 +156,7 @@ final class HomeController
     "Retrouvez ici les applications publiées par Hianpe. Téléchargez StageFlow pour Windows ou consultez les versions et leurs notes de publication.":"Explore applications published by Hianpe. Download StageFlow for Windows or browse releases and their notes.",
     "Application desktop":"Desktop application","Outil de présentation conçu pour accompagner les équipes et les églises dans la gestion de leurs diapositives et médias.":"Presentation software designed to help teams and churches manage slides and media.",
     "Télécharger pour Windows ↓":"Download for Windows ↓","Toutes les versions ↗":"All releases ↗",
+    "Présentation de StageFlow ↗":"StageFlow overview ↗",
     "Outils métier":"Business tools","Utilitaires Hianpe":"Hianpe utilities",
     "Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.":"A collection of practical tools to simplify everyday tasks and improve productivity.",
     "Versions à venir":"Upcoming versions","Bientôt disponible":"Coming soon",
