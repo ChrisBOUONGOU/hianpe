@@ -171,7 +171,7 @@ if (menuToggle && menu) {
     "Parlons de votre projet":"Let's discuss your project",
     "Développement logiciel & solutions numériques":"Software development & digital solutions",
     "Logiciel de présentation · Hianpe":"Presentation software · Hianpe",
-    "Vos présentations.":"Your presentations.","Vos ":"Your ","message.":"message.",
+    "Vos présentations.":"Your presentations.","Vos":"Your","Votre":"Your","message.":"message.",
     "StageFlow aide les églises et les équipes de présentation à organiser leurs diapositives, paroles, passages bibliques et médias dans un flux de travail simple.":"StageFlow helps churches and presentation teams organize slides, lyrics, Bible passages and media in a simple workflow.",
     "Télécharger StageFlow pour Windows ↓":"Download StageFlow for Windows ↓",
     "Voir les captures":"View screenshots","Version Windows disponible · Consultez les notes de version sur GitHub":"Windows version available · See release notes on GitHub",
