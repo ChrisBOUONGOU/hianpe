@@ -143,6 +143,7 @@ final class StageFlowController
   </div>
 </div></section>
 <section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Démo en cours</div><h2>Découvrez les possibilités de StageFlow.</h2><p>Parcourez les fonctionnalités et les captures de l’interface. Les abonnements et les périodes d’essai seront annoncés lorsqu’ils seront prêts.</p></div><div class="actions"><a class="button" href="/Installer/StageFlow-Setup.exe" target="_blank" rel="noreferrer">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></div></div></section>
+<section class="section" id="prerequis"><div class="wrap"><div class="cta"><div><div class="eyebrow">Prérequis Windows</div><h2>Installez le runtime .NET Desktop.</h2><p>StageFlow nécessite le runtime .NET Desktop 10 pour Windows 64 bits. Si ce composant n’est pas déjà installé sur votre ordinateur, téléchargez-le et installez-le avant de lancer StageFlow.</p></div><div class="actions"><a class="button" href="https://dotnet.microsoft.com/fr-fr/download/dotnet/thank-you/runtime-desktop-10.0.12-windows-x64-installers" target="_blank" rel="noreferrer">Télécharger .NET Desktop Runtime ↓</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
 <script>
@@ -202,6 +203,7 @@ if (menuToggle && menu) {
     "Préparez votre prochaine présentation avec StageFlow.":"Prepare your next presentation with StageFlow.",
     "Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.":"Download the Windows installer or browse all releases and release notes on GitHub.",
     "Télécharger pour Windows ↓":"Download for Windows ↓","Toutes les versions ↗":"All releases ↗",
+    "Prérequis Windows":"Windows requirements","Installez le runtime .NET Desktop.":"Install the .NET Desktop Runtime.","StageFlow nécessite le runtime .NET Desktop 10 pour Windows 64 bits. Si ce composant n’est pas déjà installé sur votre ordinateur, téléchargez-le et installez-le avant de lancer StageFlow.":"StageFlow requires the .NET Desktop Runtime 10 for 64-bit Windows. If it is not already installed on your computer, download and install it before launching StageFlow.","Télécharger .NET Desktop Runtime ↓":"Download .NET Desktop Runtime ↓",
     "Hianpe. Des solutions numériques pensées pour durer.":"Hianpe. Digital solutions built to last.",
     "Ouvrir le menu":"Open menu","Fermer le menu":"Close menu","Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
     "Ouvrir la capture":"Open screenshot",
