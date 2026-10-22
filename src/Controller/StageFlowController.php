@@ -68,15 +68,38 @@ final class StageFlowController
   
     .menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;padding:10px;font-size:1.15rem;cursor:pointer}
     @media(max-width:620px){.nav{position:relative}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:100%;left:0;right:0;z-index:30;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.navlinks .button{align-self:flex-start}.navlinks a:not(.button){display:block}}
-</style>
+
+    /* En-tête et pied de page alignés sur le style de HomeController.php */
+    :root{--max:1160px}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(245,240,230,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:-.04em;font-size:1.35rem}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:12px}
+    .navlinks{display:flex;align-items:center;gap:28px;font-size:.92rem;font-weight:650}
+    .navlinks a:not(.button):hover{opacity:.65}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--white);padding:13px 19px;border:1px solid var(--ink);border-radius:999px;font-weight:750;font-size:.92rem;transition:transform .2s,background .2s}
+    .button:hover{transform:translateY(-2px);background:#33332d}
+    .button.yellow{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+    .button.outline{background:transparent;color:var(--ink)}
+    .menu-toggle{display:none;border:1px solid var(--line);background:transparent;border-radius:12px;padding:10px;font-size:1.15rem}
+    .footer{background:var(--ink);color:var(--white);padding:28px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#aaa89e;font-size:.82rem}
+    .footer-brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:850}
+    .footer-brand img{width:30px;height:30px;object-fit:contain;background:var(--paper);border-radius:8px}
+    .footer-links{display:flex;gap:18px}
+    .footer a:hover{color:var(--yellow)}
+    .language-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 13px;font:inherit;font-size:.82rem;font-weight:850;cursor:pointer;white-space:nowrap}
+    .language-toggle:hover{background:var(--yellow);border-color:var(--yellow)}
+    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:72px;position:relative}.brand img{width:40px;height:40px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;z-index:30;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.navlinks .button{align-self:flex-start}.navlinks a:not(.button){display:block}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
+  </style>
 </head>
 <body>
 <header class="topbar">
   <div class="wrap nav">
-    <a class="brand" href="#accueil" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
+    <a class="brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
     <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     <nav class="navlinks" aria-label="Navigation principale">
-      <a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
+      <a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
     </nav>
   </div>
 </header>
@@ -121,7 +144,7 @@ final class StageFlowController
 </div></section>
 <section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Prêt à essayer ?</div><h2>Préparez votre prochaine présentation avec StageFlow.</h2><p>Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.</p></div><div class="actions"><a class="button" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></div></div></section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="#accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="/contact">Contact</a></div></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 const menuToggle = document.querySelector('.menu-toggle');
