@@ -127,7 +127,7 @@ final class ContactController
 </p></form>
 </section></section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><a href="/">Retour à l'accueil ↗</a></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 const params = new URLSearchParams(window.location.search);
@@ -145,6 +145,8 @@ if (params.get('mail_error') === '1') {
 
 <script>
 (() => {
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
   const translations = {
     "Services":"Services","Logiciels":"Software","Notre approche":"Our approach",
     "Parlons de votre projet":"Let's discuss your project",
