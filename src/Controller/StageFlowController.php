@@ -73,10 +73,10 @@ final class StageFlowController
 <body>
 <header class="topbar">
   <div class="wrap nav">
-    <a class="brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
+    <a class="brand" href="#accueil" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
     <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     <nav class="navlinks" aria-label="Navigation principale">
-      <a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
+      <a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="#approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact">Parlons de votre projet <span>↗</span></a>
     </nav>
   </div>
 </header>
@@ -121,7 +121,7 @@ final class StageFlowController
 </div></section>
 <section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Prêt à essayer ?</div><h2>Préparez votre prochaine présentation avec StageFlow.</h2><p>Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.</p></div><div class="actions"><a class="button" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></div></div></section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="#accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="#services">Services</a><a href="#logiciels">Logiciels</a><a href="/contact">Contact</a></div></div></footer>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 const menuToggle = document.querySelector('.menu-toggle');
