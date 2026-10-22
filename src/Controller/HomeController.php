@@ -81,13 +81,13 @@ final class HomeController
   </section>
   <section class="section dark" id="logiciels">
     <div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">Catalogue Hianpe</div><h2>Des logiciels à découvrir.<br>Un catalogue qui grandit.</h2></div><p>Retrouvez ici les applications publiées par Hianpe. Les liens de téléchargement seront ajoutés au fur et à mesure des versions officiellement disponibles.</p></div>
+      <div class="section-head"><div><div class="eyebrow">Catalogue Hianpe</div><h2>Des logiciels à découvrir.<br>Un catalogue qui grandit.</h2></div><p>Retrouvez ici les applications publiées par Hianpe. Téléchargez StageFlow pour Windows ou consultez les versions et leurs notes de publication.</p></div>
       <div class="software-grid">
-        <article class="software"><div class="software-top"><div class="software-mark">SF</div><span class="pill">Application desktop</span></div><h3>StageFlow</h3><p>Outil de présentation conçu pour accompagner les équipes et les églises dans la gestion de leurs diapositives et médias.</p><div class="software-meta"><span>C# / .NET</span><span>Avalonia UI</span><span>Windows · Linux prévu selon version</span></div><a class="button coming" href="https://github.com/ChrisBOUONGOU/StageFlow" target="_blank" rel="noreferrer">Suivre le projet sur GitHub ↗</a></article>
+        <article class="software"><div class="software-top"><div class="software-mark">SF</div><span class="pill">Application desktop</span></div><h3>StageFlow</h3><p>Outil de présentation conçu pour accompagner les équipes et les églises dans la gestion de leurs diapositives et médias.</p><div class="software-meta"><span>C# / .NET</span><span>Avalonia UI</span><span>Windows · Linux prévu selon version</span></div><div class="actions" style="margin-top:auto;gap:9px"><a class="button yellow" href="https://github.com/ChrisBOUONGOU/StageFlow/releases/latest/download/StageFlow-Setup.exe">Télécharger pour Windows ↓</a><a class="button coming" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></article>
         <article class="software"><div class="software-top"><div class="software-mark">APP</div><span class="pill">Outils métier</span></div><h3>Utilitaires Hianpe</h3><p>Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.</p><div class="software-meta"><span>Outils pratiques</span><span>Versions à venir</span></div><span class="button coming">Bientôt disponible</span></article>
         <article class="software"><div class="software-top"><div class="software-mark">DEV</div><span class="pill">Projets personnalisés</span></div><h3>Votre prochain logiciel</h3><p>Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.</p><div class="software-meta"><span>Sur mesure</span><span>C# / .NET</span></div><a class="button yellow" href="/contact">Présenter mon idée ↗</a></article>
       </div>
-      <p class="software-note">Note : aucun fichier d'installation n'est proposé ici tant qu'une version vérifiée n'est pas publiée. Les plateformes compatibles et les notes de version seront précisées sur chaque fiche de téléchargement.</p>
+      <p class="software-note">Le téléchargement Windows sera actif dès que le programme d’installation StageFlow-Setup.exe sera ajouté à une version publiée dans GitHub Releases. Consultez les versions pour suivre les mises à jour.</p>
     </div>
   </section>
   <section class="section" id="approche">
@@ -153,16 +153,16 @@ final class HomeController
     "Choix d'architecture, cadrage de projet et accompagnement pour avancer avec des décisions techniques éclairées.":"Architecture choices, project scoping and guidance to help you make informed technical decisions.",
     "Échanger avec Hianpe":"Talk to Hianpe","Catalogue Hianpe":"Hianpe catalogue",
     "Des logiciels à découvrir.":"Software to explore.","Un catalogue qui grandit.":"A growing catalogue.",
-    "Retrouvez ici les applications publiées par Hianpe. Les liens de téléchargement seront ajoutés au fur et à mesure des versions officiellement disponibles.":"Explore applications published by Hianpe. Download links will be added as verified releases become available.",
+    "Retrouvez ici les applications publiées par Hianpe. Téléchargez StageFlow pour Windows ou consultez les versions et leurs notes de publication.":"Explore applications published by Hianpe. Download StageFlow for Windows or browse releases and their notes.",
     "Application desktop":"Desktop application","Outil de présentation conçu pour accompagner les équipes et les églises dans la gestion de leurs diapositives et médias.":"Presentation software designed to help teams and churches manage slides and media.",
-    "Suivre le projet sur GitHub ↗":"Follow the project on GitHub ↗",
+    "Télécharger pour Windows ↓":"Download for Windows ↓","Toutes les versions ↗":"All releases ↗",
     "Outils métier":"Business tools","Utilitaires Hianpe":"Hianpe utilities",
     "Une collection d'outils pratiques pour simplifier des tâches du quotidien et améliorer la productivité.":"A collection of practical tools to simplify everyday tasks and improve productivity.",
     "Versions à venir":"Upcoming versions","Bientôt disponible":"Coming soon",
     "Projets personnalisés":"Custom projects","Votre prochain logiciel":"Your next software project",
     "Vous avez une idée d'application ou un besoin précis ? Hianpe peut étudier la création d'une solution adaptée.":"Have an app idea or a specific need? Hianpe can explore building a solution tailored to you.",
     "Présenter mon idée ↗":"Share my idea ↗",
-    "Note : aucun fichier d'installation n'est proposé ici tant qu'une version vérifiée n'est pas publiée. Les plateformes compatibles et les notes de version seront précisées sur chaque fiche de téléchargement.":"Note: installers are not offered here until a verified release is published. Supported platforms and release notes will be provided with each download.",
+    "Le téléchargement Windows sera actif dès que le programme d’installation StageFlow-Setup.exe sera ajouté à une version publiée dans GitHub Releases. Consultez les versions pour suivre les mises à jour.":"The Windows download will become active once StageFlow-Setup.exe is attached to a published GitHub Release. Visit releases to follow updates.",
     "Une méthode claire":"A clear process","Un projet bien cadré":"A well-defined project",
     "avance mieux.":"moves forward.","Une collaboration simple, avec des étapes compréhensibles et une attention portée à l'utilité du résultat final.":"A straightforward collaboration, with clear steps and a focus on delivering useful results.",
     "ÉTAPE 01":"STEP 01","Comprendre":"Understand","Nous clarifions vos objectifs, vos utilisateurs et les contraintes du projet.":"We clarify your goals, users and project constraints.",
