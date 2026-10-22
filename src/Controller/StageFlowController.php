@@ -212,7 +212,7 @@ if (menuToggle && menu) {
     "Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
     "Ouvrir la capture":"Open screenshot",
     "StageFlow — Présentation | Hianpe":"StageFlow — Demo | Hianpe",
-    "Découvrez StageFlow, un logiciel de présentation pour les églises et les équipes : diapositives, paroles, Bible et médias dans un flux de travail simple.":"Discover StageFlow, presentation software for churches and teams: slides, lyrics, Bible passages and media in a simple workflow."
+    "Découvrez la démo de StageFlow, un logiciel de présentation pour les églises. Les abonnements et les périodes d’essai ne sont pas encore disponibles.":"Explore the StageFlow demo, presentation software for churches. Subscriptions and free trials are not available yet."
   };
   const normalise = value => value.replace(/\\s+/g, ' ').trim();
   function setLanguage(language) {
