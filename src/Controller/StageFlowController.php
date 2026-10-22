@@ -90,6 +90,15 @@ final class StageFlowController
     .footer a:hover{color:var(--yellow)}
     .language-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:10px 13px;font:inherit;font-size:.82rem;font-weight:850;cursor:pointer;white-space:nowrap}
     .language-toggle:hover{background:var(--yellow);border-color:var(--yellow)}
+    .runtime-banner{background:#fff0bd;border-bottom:2px solid #d8a900;color:#28230f}
+    .runtime-banner-inner{width:min(var(--max),calc(100% - 40px));margin:auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .runtime-banner-copy{display:flex;align-items:flex-start;gap:14px}
+    .runtime-banner-icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:12px;background:#171714;color:#f5c542;font-size:1.35rem;font-weight:900}
+    .runtime-banner h2{font-size:1.05rem;line-height:1.25;margin:0 0 4px;letter-spacing:-.02em}
+    .runtime-banner p{font-size:.9rem;line-height:1.45;margin:0;max-width:720px;color:#51451f}
+    .runtime-banner .button{flex-shrink:0;white-space:nowrap}
+    @media(max-width:760px){.runtime-banner-inner{align-items:stretch;flex-direction:column;gap:14px}.runtime-banner .button{align-self:flex-start;white-space:normal}}
+    @media(max-width:600px){.runtime-banner-inner{width:calc(100% - 28px);padding:16px 0}.runtime-banner-copy{gap:10px}.runtime-banner-icon{flex-basis:36px;height:36px}}
     @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:72px;position:relative}.brand img{width:40px;height:40px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;z-index:30;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.navlinks.open{display:flex}.navlinks .button{align-self:flex-start}.navlinks a:not(.button){display:block}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
   </style>
 </head>
@@ -103,6 +112,7 @@ final class StageFlowController
     </nav>
   </div>
 </header>
+<div class="runtime-banner" role="note" aria-labelledby="runtime-title"><div class="runtime-banner-inner"><div class="runtime-banner-copy"><span class="runtime-banner-icon" aria-hidden="true">!</span><div><h2 id="runtime-title">Important : installez le composant .NET avant de lancer StageFlow</h2><p>StageFlow nécessite le .NET Desktop Runtime 10 (Windows 64 bits). Si ce composant n’est pas déjà installé sur votre PC, téléchargez-le et installez-le d’abord. Sinon, vous risquez de ne pas pouvoir ouvrir l’application.</p></div></div><a class="button" href="https://dotnet.microsoft.com/fr-fr/download/dotnet/thank-you/runtime-desktop-10.0.12-windows-x64-installers" target="_blank" rel="noreferrer">Télécharger .NET Desktop Runtime ↓</a></div></div>
 <main>
 <section class="hero"><div class="wrap hero-grid">
   <div><div class="eyebrow">Démo de présentation · Hianpe</div>
@@ -143,7 +153,6 @@ final class StageFlowController
   </div>
 </div></section>
 <section class="section"><div class="wrap"><div class="cta"><div><div class="eyebrow">Démo en cours</div><h2>Découvrez les possibilités de StageFlow.</h2><p>Parcourez les fonctionnalités et les captures de l’interface. Les abonnements et les périodes d’essai seront annoncés lorsqu’ils seront prêts.</p></div><div class="actions"><a class="button" href="/Installer/StageFlow-Setup.exe" target="_blank" rel="noreferrer">Télécharger pour Windows ↓</a><a class="button outline" href="https://github.com/ChrisBOUONGOU/StageFlow/releases" target="_blank" rel="noreferrer">Toutes les versions ↗</a></div></div></div></section>
-<section class="section" id="prerequis"><div class="wrap"><div class="cta"><div><div class="eyebrow">Prérequis Windows</div><h2>Installez le runtime .NET Desktop.</h2><p>StageFlow nécessite le runtime .NET Desktop 10 pour Windows 64 bits. Si ce composant n’est pas déjà installé sur votre ordinateur, téléchargez-le et installez-le avant de lancer StageFlow.</p></div><div class="actions"><a class="button" href="https://dotnet.microsoft.com/fr-fr/download/dotnet/thank-you/runtime-desktop-10.0.12-windows-x64-installers" target="_blank" rel="noreferrer">Télécharger .NET Desktop Runtime ↓</a></div></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><a class="footer-brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="">Hianpe</a><span>© <span id="year">2026</span> Hianpe. Des solutions numériques pensées pour durer.</span><div class="footer-links"><a href="/#services">Services</a><a href="/#logiciels">Logiciels</a><a href="/#approche">Notre approche</a><a href="/contact">Contact</a></div></div></footer>
 <script>
@@ -203,7 +212,7 @@ if (menuToggle && menu) {
     "Préparez votre prochaine présentation avec StageFlow.":"Prepare your next presentation with StageFlow.",
     "Téléchargez l’installateur Windows ou consultez toutes les versions et les notes de publication sur GitHub.":"Download the Windows installer or browse all releases and release notes on GitHub.",
     "Télécharger pour Windows ↓":"Download for Windows ↓","Toutes les versions ↗":"All releases ↗",
-    "Prérequis Windows":"Windows requirements","Installez le runtime .NET Desktop.":"Install the .NET Desktop Runtime.","StageFlow nécessite le runtime .NET Desktop 10 pour Windows 64 bits. Si ce composant n’est pas déjà installé sur votre ordinateur, téléchargez-le et installez-le avant de lancer StageFlow.":"StageFlow requires the .NET Desktop Runtime 10 for 64-bit Windows. If it is not already installed on your computer, download and install it before launching StageFlow.","Télécharger .NET Desktop Runtime ↓":"Download .NET Desktop Runtime ↓",
+    "Important : installez le composant .NET avant de lancer StageFlow":"Important: install the .NET component before launching StageFlow","StageFlow nécessite le .NET Desktop Runtime 10 (Windows 64 bits). Si ce composant n’est pas déjà installé sur votre PC, téléchargez-le et installez-le d’abord. Sinon, vous risquez de ne pas pouvoir ouvrir l’application.":"StageFlow requires the .NET Desktop Runtime 10 (64-bit Windows). If it is not already installed on your PC, download and install it first. Otherwise, you may not be able to launch the application.","Télécharger .NET Desktop Runtime ↓":"Download .NET Desktop Runtime ↓",
     "Hianpe. Des solutions numériques pensées pour durer.":"Hianpe. Digital solutions built to last.",
     "Ouvrir le menu":"Open menu","Fermer le menu":"Close menu","Hianpe, accueil":"Hianpe, home","Logo Hianpe":"Hianpe logo",
     "Ouvrir la capture":"Open screenshot",
