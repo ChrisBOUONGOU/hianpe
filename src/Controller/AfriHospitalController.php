@@ -16,7 +16,7 @@ final class AfriHospitalController
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Découvrez AfriHospital, une application de gestion hospitalière pensée pour organiser les activités et les services d'un établissement de santé.">
+  <meta name="description" content="Découvrez AfriHospital, une application de gestion hospitalière pensée pour organiser les activités et les services d'un établissement de santé." data-i18n-content="Découvrez AfriHospital, une application de gestion hospitalière pensée pour organiser les activités et les services d'un établissement de santé.">
   <meta name="theme-color" content="#171714">
   <title>AfriHospital — Hianpe</title>
   <link rel="icon" type="image/png" href="/assets/logo_hianpe.png">
@@ -35,8 +35,8 @@ final class AfriHospitalController
 </head>
 <body>
 <header class="topbar"><div class="wrap nav">
-  <a class="brand" href="/" aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
-  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <a class="brand" href="/" aria-label="Hianpe, accueil" data-i18n-aria-label="Hianpe, accueil"><img src="/assets/logo_hianpe.png" alt="Logo Hianpe">Hianpe</a>
+  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" data-i18n-aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
   <nav class="navlinks" aria-label="Navigation principale">
     <a href="/#services" data-i18n="Services">Services</a><a href="/#logiciels" data-i18n="Logiciels">Logiciels</a><a href="/#approche" data-i18n="Notre approche">Notre approche</a><button class="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button><a class="button" href="/contact" data-i18n="Parlons de votre projet">Parlons de votre projet ↗</a>
   </nav>
@@ -50,10 +50,10 @@ final class AfriHospitalController
     <div class="actions"><a class="button yellow" href="/Installer/AfriHospital-Setup-1.0.0.exe" data-i18n="Télécharger pour Windows ↓">Télécharger pour Windows ↓</a><a class="button outline" href="#captures" data-i18n="Voir les captures">Voir les captures ↓</a></div>
     <div class="trust"><span class="dot"></span><span data-i18n="Application de bureau · Présentation et téléchargement">Application de bureau · Présentation et téléchargement</span></div>
   </div>
-  <div class="hero-art" aria-label="Aperçu illustratif du tableau de bord AfriHospital">
+  <div class="hero-art" aria-label="Aperçu illustratif du tableau de bord AfriHospital" data-i18n-aria-label="Aperçu illustratif du tableau de bord AfriHospital">
     <span class="float one" data-i18n="Vue d’ensemble">Vue d’ensemble</span>
     <div class="dashboard"><div class="dash-head"><span class="dash-title">AfriHospital</span><span class="dash-status" data-i18n="Tableau de bord">Tableau de bord</span></div>
-      <div class="dash-grid"><div class="dash-card"><span data-i18n="Patients">Patients</span><strong>+ Patients</strong></div><div class="dash-card"><span data-i18n="Rendez-vous">Rendez-vous</span><strong>Agenda</strong></div><div class="dash-card"><span data-i18n="Personnel">Personnel</span><strong>Équipe</strong></div><div class="dash-card"><span data-i18n="Services">Services</span><strong>+</strong></div></div>
+      <div class="dash-grid"><div class="dash-card"><span data-i18n="Patients">Patients</span><strong data-i18n="+ Patients">+ Patients</strong></div><div class="dash-card"><span data-i18n="Rendez-vous">Rendez-vous</span><strong data-i18n="Agenda">Agenda</strong></div><div class="dash-card"><span data-i18n="Personnel">Personnel</span><strong data-i18n="Équipe">Équipe</strong></div><div class="dash-card"><span data-i18n="Services">Services</span><strong>+</strong></div></div>
       <div class="dash-bottom"><span class="dash-title" data-i18n="Activité de l’établissement">Activité de l’établissement</span><div class="dash-line"></div><div class="dash-line"></div><div class="dash-line"></div></div>
     </div>
     <span class="float two" data-i18n="Les informations au même endroit">Les informations au même endroit ✓</span>
@@ -73,7 +73,7 @@ final class AfriHospitalController
 <section class="video-section" id="video"><div class="wrap">
   <div class="section-head"><div><div class="eyebrow" data-i18n="Présentation vidéo">Présentation vidéo</div><h2 data-i18n="Découvrez AfriHospital en action.">Découvrez AfriHospital en action.</h2></div></div>
   <p class="intro" data-i18n="video-copy">Lancez la vidéo pour découvrir l’application et son interface.</p>
-  <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/gl_YjI0LNsU" title="Présentation vidéo d’AfriHospital" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/gl_YjI0LNsU" title="Présentation vidéo d’AfriHospital" data-i18n-title="Présentation vidéo d’AfriHospital" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 </div></section>
 <section class="section dark" id="captures"><div class="wrap">
   <div class="section-head"><div><div class="eyebrow" data-i18n="Galerie">Galerie</div><h2 data-i18n="Un aperçu de l’interface.">Un aperçu de l’interface.</h2></div><p data-i18n="gallery-copy">Découvrez quelques écrans d’AfriHospital. Sélectionnez une image pour l’ouvrir en grand.</p></div>
@@ -89,9 +89,9 @@ final class AfriHospitalController
 <section class="section"><div class="wrap">
   <div class="section-head"><div><div class="eyebrow" data-i18n="Pour commencer">Pour commencer</div><h2 data-i18n="Installez et explorez l’application.">Installez et explorez l’application.</h2></div></div>
   <div class="steps">
-    <article class="step"><span class="num">ÉTAPE 01</span><h3 data-i18n="Télécharger">Télécharger</h3><p data-i18n="download-copy">Téléchargez le programme d’installation d’AfriHospital pour Windows.</p></article>
-    <article class="step"><span class="num">ÉTAPE 02</span><h3 data-i18n="Installer">Installer</h3><p data-i18n="install-copy">Ouvrez le fichier téléchargé et suivez les instructions d’installation affichées.</p></article>
-    <article class="step"><span class="num">ÉTAPE 03</span><h3 data-i18n="Découvrir">Découvrir</h3><p data-i18n="discover-copy">Lancez l’application et explorez ses différents modules.</p></article>
+    <article class="step"><span class="num" data-i18n="ÉTAPE 01">ÉTAPE 01</span><h3 data-i18n="Télécharger">Télécharger</h3><p data-i18n="download-copy">Téléchargez le programme d’installation d’AfriHospital pour Windows.</p></article>
+    <article class="step"><span class="num" data-i18n="ÉTAPE 02">ÉTAPE 02</span><h3 data-i18n="Installer">Installer</h3><p data-i18n="install-copy">Ouvrez le fichier téléchargé et suivez les instructions d’installation affichées.</p></article>
+    <article class="step"><span class="num" data-i18n="ÉTAPE 03">ÉTAPE 03</span><h3 data-i18n="Découvrir">Découvrir</h3><p data-i18n="discover-copy">Lancez l’application et explorez ses différents modules.</p></article>
   </div>
 </div></section>
 <section class="section" id="contact"><div class="wrap"><div class="cta"><div><div class="eyebrow" data-i18n="AfriHospital par Hianpe">AfriHospital par Hianpe</div><h2 data-i18n="Découvrez une nouvelle façon d’organiser vos opérations.">Découvrez une nouvelle façon d’organiser vos opérations.</h2><p data-i18n="cta-copy">Vous avez une question ou un retour à partager au sujet d’AfriHospital ? Contactez Hianpe.</p></div><a class="button" href="/contact" data-i18n="Contacter Hianpe ↗">Contacter Hianpe ↗</a></div></div></section>
@@ -102,7 +102,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const menuToggle=document.querySelector('.menu-toggle'), menu=document.querySelector('.navlinks');
 menuToggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');menuToggle.textContent=open?'×':'☰';});
 const translations={
-"Services":"Services","Logiciels":"Software","Notre approche":"Our approach","Parlons de votre projet":"Let's discuss your project",
+"Hianpe, accueil":"Hianpe, home","Ouvrir le menu":"Open menu","Fermer le menu":"Close menu","Aperçu illustratif du tableau de bord AfriHospital":"Illustrative preview of the AfriHospital dashboard","Présentation vidéo d’AfriHospital":"AfriHospital video overview","Découvrez AfriHospital, une application de gestion hospitalière pensée pour organiser les activités et les services d'un établissement de santé.":"Discover AfriHospital, a hospital management application designed to organize the activities and services of a healthcare facility.","Services":"Services","Logiciels":"Software","Notre approche":"Our approach","Parlons de votre projet":"Let's discuss your project",
 "Gestion hospitalière":"Hospital management","Une gestion plus claire.":"Clearer hospital management.","ÉTAPE 01":"STEP 01","ÉTAPE 02":"STEP 02","ÉTAPE 03":"STEP 03","+ Patients":"+ Patients","Agenda":"Schedule","Équipe":"Team","hero-copy":"Discover AfriHospital, a hospital management application designed to help healthcare facilities organize information and activities in one centralized workspace.",
 "Télécharger pour Windows ↓":"Download for Windows ↓","Voir les captures":"View screenshots","Application de bureau · Présentation et téléchargement":"Desktop application · Overview and download","Vue d’ensemble":"Overview","Tableau de bord":"Dashboard","Patients":"Patients","Rendez-vous":"Appointments","Personnel":"Staff","Activité de l’établissement":"Facility activity","Les informations au même endroit":"Information in one place ✓",
 "Fonctionnalités":"Features","Les principaux outils pour organiser les activités hospitalières.":"Key tools to organize hospital operations.","features-intro":"A desktop application that brings together several management areas to support the day-to-day work of a healthcare facility.",
@@ -118,8 +118,9 @@ function setLanguage(lang){
  document.documentElement.lang=lang;
  document.querySelectorAll('.language-toggle').forEach(btn=>{btn.textContent=lang==='fr'?'EN':'FR';btn.title=lang==='fr'?'Switch to English':'Passer en français';btn.setAttribute('aria-label',btn.title);});
  document.querySelectorAll('[data-i18n]').forEach(el=>{const fr=original.get(el);el.textContent=lang==='en'?(translations[fr]||fr):fr;});
- document.querySelectorAll('.num').forEach(el=>{const fr=el.textContent;el.textContent=lang==='en'?(translations[fr]||fr):fr;});
- document.querySelectorAll('.dash-card strong').forEach(el=>{const fr=el.textContent;el.textContent=lang==='en'?(translations[fr]||fr):fr;});
+ document.querySelectorAll('[data-i18n-aria-label]').forEach(el=>{const fr=el.getAttribute('data-i18n-aria-label');el.setAttribute('aria-label',lang==='en'?(translations[fr]||fr):fr);});
+ document.querySelectorAll('[data-i18n-title]').forEach(el=>{const fr=el.getAttribute('data-i18n-title');el.setAttribute('title',lang==='en'?(translations[fr]||fr):fr);});
+ document.querySelectorAll('[data-i18n-content]').forEach(el=>{const fr=el.getAttribute('data-i18n-content');el.setAttribute('content',lang==='en'?(translations[fr]||fr):fr);});
  document.title=lang==='fr'?'AfriHospital — Hianpe':'AfriHospital — Hianpe';
  try{localStorage.setItem('hianpe-language',lang);}catch(e){}
 }
