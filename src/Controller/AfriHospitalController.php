@@ -45,7 +45,7 @@ final class AfriHospitalController
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <div class="eyebrow" data-i18n="Gestion hospitalière">Gestion hospitalière</div>
-    <h1>Une gestion plus claire.<br><span class="highlight">AfriHospital.</span></h1>
+    <h1><span data-i18n="Une gestion plus claire.">Une gestion plus claire.</span><br><span class="highlight">AfriHospital.</span></h1>
     <p class="lead" data-i18n="hero-copy">Découvrez AfriHospital, une application de gestion hospitalière conçue pour aider les établissements de santé à organiser leurs informations et leurs activités dans un espace de travail centralisé.</p>
     <div class="actions"><a class="button yellow" href="/Installer/AfriHospital-Setup-1.0.0.exe" data-i18n="Télécharger pour Windows ↓">Télécharger pour Windows ↓</a><a class="button outline" href="#captures" data-i18n="Voir les captures">Voir les captures ↓</a></div>
     <div class="trust"><span class="dot"></span><span data-i18n="Application de bureau · Présentation et téléchargement">Application de bureau · Présentation et téléchargement</span></div>
