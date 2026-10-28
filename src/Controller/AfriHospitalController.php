@@ -103,7 +103,7 @@ const menuToggle=document.querySelector('.menu-toggle'), menu=document.querySele
 menuToggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');menuToggle.textContent=open?'×':'☰';});
 const translations={
 "Services":"Services","Logiciels":"Software","Notre approche":"Our approach","Parlons de votre projet":"Let's discuss your project",
-"Gestion hospitalière":"Hospital management","hero-copy":"Discover AfriHospital, a hospital management application designed to help healthcare facilities organize information and activities in one centralized workspace.",
+"Gestion hospitalière":"Hospital management","Une gestion plus claire.":"Clearer hospital management.","ÉTAPE 01":"STEP 01","ÉTAPE 02":"STEP 02","ÉTAPE 03":"STEP 03","+ Patients":"+ Patients","Agenda":"Schedule","Équipe":"Team","hero-copy":"Discover AfriHospital, a hospital management application designed to help healthcare facilities organize information and activities in one centralized workspace.",
 "Télécharger pour Windows ↓":"Download for Windows ↓","Voir les captures":"View screenshots","Application de bureau · Présentation et téléchargement":"Desktop application · Overview and download","Vue d’ensemble":"Overview","Tableau de bord":"Dashboard","Patients":"Patients","Rendez-vous":"Appointments","Personnel":"Staff","Activité de l’établissement":"Facility activity","Les informations au même endroit":"Information in one place ✓",
 "Fonctionnalités":"Features","Les principaux outils pour organiser les activités hospitalières.":"Key tools to organize hospital operations.","features-intro":"A desktop application that brings together several management areas to support the day-to-day work of a healthcare facility.",
 "Dossiers des patients":"Patient records","patients-copy":"Centralize essential information and find patient records more easily.","Admissions et rendez-vous":"Admissions and appointments","appointments-copy":"Organize admissions and schedule appointments within the facility.","Personnel et utilisateurs":"Staff and users","staff-copy":"Manage team information and user access according to the functions available in the application.","Lits et hospitalisation":"Beds and inpatient care","beds-copy":"Track beds and information related to inpatient capacity.","Pharmacie et laboratoire":"Pharmacy and laboratory","pharmacy-copy":"Bring pharmacy and laboratory information together in dedicated modules.","Facturation et tableau de bord":"Billing and dashboard","billing-copy":"Access billing functions and an overview of activity.",
@@ -118,6 +118,8 @@ function setLanguage(lang){
  document.documentElement.lang=lang;
  document.querySelectorAll('.language-toggle').forEach(btn=>{btn.textContent=lang==='fr'?'EN':'FR';btn.title=lang==='fr'?'Switch to English':'Passer en français';btn.setAttribute('aria-label',btn.title);});
  document.querySelectorAll('[data-i18n]').forEach(el=>{const fr=original.get(el);el.textContent=lang==='en'?(translations[fr]||fr):fr;});
+ document.querySelectorAll('.num').forEach(el=>{const fr=el.textContent;el.textContent=lang==='en'?(translations[fr]||fr):fr;});
+ document.querySelectorAll('.dash-card strong').forEach(el=>{const fr=el.textContent;el.textContent=lang==='en'?(translations[fr]||fr):fr;});
  document.title=lang==='fr'?'AfriHospital — Hianpe':'AfriHospital — Hianpe';
  try{localStorage.setItem('hianpe-language',lang);}catch(e){}
 }
