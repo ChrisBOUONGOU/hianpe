@@ -118,7 +118,7 @@ const translations={
 "Regroupez les informations de pharmacie et de laboratoire dans les modules dédiés.":"Group pharmacy and laboratory information into the dedicated modules.","Accédez aux fonctions de facturation et à une vue d’ensemble de l’activité.":"Access invoicing functions and an overview of activity.",
 "Vous avez une question ou un retour à partager au sujet d’AfriHospital ? Contactez Hianpe.":"Do you have a question or feedback to share regarding AfriHospital? Contact Hianpe.",
 "Voir les captures ↓":"See screenshots ↓", "Lancez la vidéo pour découvrir l’application et son interface.":"Start the video to discover the application and its interface.","Découvrez quelques écrans d’AfriHospital. Sélectionnez une image pour l’ouvrir en grand.":"Take a look at some of the screens from AfriHospital. Select an image to view it in a larger size.",
-"Téléchargez le programme d’installation d’AfriHospital pour Windows.":"Download the AfriHospital installer for Windows."
+"Téléchargez le programme d’installation d’AfriHospital pour Windows.":"Download the AfriHospital installer for Windows.", "Les captures doivent être présentes dans le dossier public/assets/Sreenshots du site pour apparaître en ligne.":"Screenshots must be present in the site's public/assets/Screenshots folder in order to appear online."
 };
 const original=new Map();
 document.querySelectorAll('[data-i18n]').forEach(el=>original.set(el,el.textContent));
