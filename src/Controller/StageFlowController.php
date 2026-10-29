@@ -17,14 +17,18 @@ final class StageFlowController
         if (is_dir($screenshotsDir)) {
             foreach (['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG', '*.webp', '*.WEBP', '*.gif', '*.GIF'] as $pattern) {
                 foreach (glob($screenshotsDir . '/' . $pattern) ?: [] as $file) {
-                    if (is_file($file)) {
+                    if (is_file($file) && in_array(strtolower(pathinfo($file, PATHINFO_FILENAME)), ['image_deux', 'image_sept'], true)) {
                         $files[] = basename($file);
                     }
                 }
             }
         }
 
-        natcasesort($files);
+        $files = array_values(array_unique($files));
+        usort($files, static function (string $a, string $b): int {
+            $order = ['image_deux' => 0, 'image_sept' => 1];
+            return ($order[strtolower(pathinfo($a, PATHINFO_FILENAME))] ?? 99) <=> ($order[strtolower(pathinfo($b, PATHINFO_FILENAME))] ?? 99);
+        });
         $gallery = '';
         foreach ($files as $index => $file) {
             $safeName = htmlspecialchars($file, ENT_QUOTES, 'UTF-8');
