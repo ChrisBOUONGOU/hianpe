@@ -11,7 +11,7 @@ final class StageFlowController
     public function __invoke(): Response
     {
         $projectDir = dirname(__DIR__, 2);
-        $screenshotsDir = $projectDir . '/public/assets/Sreenshots/image_stageflow/image_stageflow';
+        $screenshotsDir = $projectDir . '/public/assets/Sreenshots/image_stageflow';
         $files = [];
 
         if (is_dir($screenshotsDir)) {
