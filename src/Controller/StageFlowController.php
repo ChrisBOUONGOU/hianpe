@@ -11,13 +11,13 @@ final class StageFlowController
     public function __invoke(): Response
     {
         $projectDir = dirname(__DIR__, 2);
-        $screenshotsDir = $projectDir . '/public/assets/Sreenshots';
+        $screenshotsDir = $projectDir . '/public/assets/Sreenshots/image_stageflow/image_stageflow';
         $files = [];
 
         if (is_dir($screenshotsDir)) {
             foreach (['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG', '*.webp', '*.WEBP', '*.gif', '*.GIF'] as $pattern) {
                 foreach (glob($screenshotsDir . '/' . $pattern) ?: [] as $file) {
-                    if (is_file($file) && in_array(strtolower(pathinfo($file, PATHINFO_FILENAME)), ['image_deux', 'image_sept'], true)) {
+                    if (is_file($file)) {
                         $files[] = basename($file);
                     }
                 }
@@ -26,13 +26,12 @@ final class StageFlowController
 
         $files = array_values(array_unique($files));
         usort($files, static function (string $a, string $b): int {
-            $order = ['image_deux' => 0, 'image_sept' => 1];
-            return ($order[strtolower(pathinfo($a, PATHINFO_FILENAME))] ?? 99) <=> ($order[strtolower(pathinfo($b, PATHINFO_FILENAME))] ?? 99);
+            return strnatcasecmp($a, $b);
         });
         $gallery = '';
         foreach ($files as $index => $file) {
             $safeName = htmlspecialchars($file, ENT_QUOTES, 'UTF-8');
-            $src = '/assets/Sreenshots/' . rawurlencode($file);
+            $src = '/assets/Sreenshots/image_stageflow/' . rawurlencode($file);
             $number = str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT);
             $gallery .= '<a class="shot" href="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noreferrer" aria-label="Ouvrir la capture ' . $number . '">'
                 . '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="Capture d’écran de StageFlow — ' . $safeName . '" loading="lazy">'
@@ -40,7 +39,7 @@ final class StageFlowController
         }
 
         if ($gallery === '') {
-            $gallery = '<div class="gallery-empty"><strong>Les captures d’écran arrivent ici.</strong><p>Ajoutez les images dans <code>public/assets/Sreenshots/</code>, puis envoyez ce dossier sur GitHub. La galerie les affichera automatiquement.</p></div>';
+            $gallery = '<div class="gallery-empty"><strong>Les captures d’écran arrivent ici.</strong><p>Ajoutez les images dans <code>public/assets/Sreenshots/image_stageflow/</code>, puis envoyez ce dossier sur GitHub. La galerie les affichera automatiquement.</p></div>';
         }
 
         $count = count($files);
