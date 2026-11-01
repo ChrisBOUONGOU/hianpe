@@ -22,7 +22,21 @@ final class ContactController
     MailerInterface $mailer): Response
     {
 
+    $session = $request->getSession();
+
     if ($request->isMethod('POST')) {
+        $captchaAnswer = trim((string) $request->request->get('captcha', ''));
+        $expectedCaptcha = (string) $session->get('contact_captcha_answer', '');
+
+        if ($expectedCaptcha === '' || !hash_equals($expectedCaptcha, $captchaAnswer)) {
+            return new Response(
+                'Vérification anti-robot incorrecte. Résolvez le calcul et réessayez.',
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
+        $session->remove('contact_captcha_answer');
+
         $name = trim((string) $request->request->get('name', ''));
         $email = trim((string) $request->request->get('email', ''));
         $subject = trim((string) $request->request->get('subject', ''));
@@ -82,7 +96,11 @@ final class ContactController
 
        
     }
-        return new Response(<<<'HTML'
+        $captchaA = random_int(2, 9);
+        $captchaB = random_int(1, 9);
+        $session->set('contact_captcha_answer', (string) ($captchaA + $captchaB));
+
+        return new Response(<<<HTML
 <!doctype html>
 <html lang="fr">
 <head>
@@ -145,6 +163,7 @@ final class ContactController
 <div class="field"><label for="email">Votre adresse e-mail *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="vous@exemple.com"></div>
 <div class="field full"><label for="subject">Sujet de votre demande *</label><select id="subject" name="subject" required><option value="">Choisissez un sujet</option><option>Développement C# / .NET</option><option>Logiciel ou application sur mesure</option><option>Site web / application web</option><option>Maintenance ou correction</option><option>Automatisation</option><option>StageFlow</option><option>Autre demande</option></select></div>
 <div class="field full"><label for="message">Votre message *</label><textarea id="message" name="message" required minlength="10" maxlength="5000" placeholder="Décrivez votre projet, le problème à résoudre et les fonctionnalités souhaitées…"></textarea><span class="hint">Évitez d'inclure des mots de passe ou des informations confidentielles.</span></div>
+<div class="field full"><label for="captcha">Vérification anti-robot : combien font {$captchaA} + {$captchaB} ? *</label><input id="captcha" name="captcha" type="number" inputmode="numeric" required autocomplete="off" placeholder="Votre réponse"></div>
 </div><div class="form-actions"><button class="button yellow" type="submit">Envoyer ma demande ↗</button></div><p class="notice" id="form-status">
     Votre demande sera enregistrée après validation du formulaire.
 </p></form>
