@@ -163,7 +163,7 @@ final class ContactController
 <div class="field"><label for="email">Votre adresse e-mail *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="vous@exemple.com"></div>
 <div class="field full"><label for="subject">Sujet de votre demande *</label><select id="subject" name="subject" required><option value="">Choisissez un sujet</option><option>Développement C# / .NET</option><option>Logiciel ou application sur mesure</option><option>Site web / application web</option><option>Maintenance ou correction</option><option>Automatisation</option><option>StageFlow</option><option>Autre demande</option></select></div>
 <div class="field full"><label for="message">Votre message *</label><textarea id="message" name="message" required minlength="10" maxlength="5000" placeholder="Décrivez votre projet, le problème à résoudre et les fonctionnalités souhaitées…"></textarea><span class="hint">Évitez d'inclure des mots de passe ou des informations confidentielles.</span></div>
-<div class="field full"><label for="captcha">Vérification anti-robot : combien font {$captchaA} + {$captchaB} ? *</label><input id="captcha" name="captcha" type="number" inputmode="numeric" required autocomplete="off" placeholder="Votre réponse"></div>
+<div class="field full"><label id="captcha-label" for="captcha"></label><input id="captcha" name="captcha" type="number" inputmode="numeric" required autocomplete="off" placeholder="Votre réponse"></div>
 </div><div class="form-actions"><button class="button yellow" type="submit">Envoyer ma demande ↗</button></div><p class="notice" id="form-status">
     Votre demande sera enregistrée après validation du formulaire.
 </p></form>
@@ -317,6 +317,14 @@ if (params.get('mail_error') === '1') {
     document.title = language === 'en'
       ? (location.pathname === '/contact' ? 'Contact — Hianpe' : 'Hianpe — Digital solutions that fit your needs')
       : (location.pathname === '/contact' ? 'Contact — Hianpe' : 'Hianpe — Des solutions numériques qui vous ressemblent');
+    const captchaLabel = document.getElementById('captcha-label');
+    if (captchaLabel) {
+      captchaLabel.textContent = language === 'en'
+        ? 'Anti-spam check: what is {$captchaA} + {$captchaB}? *'
+        : 'Vérification anti-robot : combien font {$captchaA} + {$captchaB} ? *';
+    }
+    const captchaInput = document.getElementById('captcha');
+    if (captchaInput) captchaInput.placeholder = language === 'en' ? 'Your answer' : 'Votre réponse';
     const languageField = document.getElementById('language-field');
     if (languageField) languageField.value = language;
     try { localStorage.setItem('hianpe-language', language); } catch (error) {}
