@@ -29,10 +29,7 @@ final class ContactController
         $expectedCaptcha = (string) $session->get('contact_captcha_answer', '');
 
         if ($expectedCaptcha === '' || !hash_equals($expectedCaptcha, $captchaAnswer)) {
-            return new Response(
-                'Vérification anti-robot incorrecte. Résolvez le calcul et réessayez.',
-                Response::HTTP_BAD_REQUEST
-            );
+            return new RedirectResponse('/contact?captcha_error=1');
         }
 
         $session->remove('contact_captcha_answer');
@@ -175,7 +172,9 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const params = new URLSearchParams(window.location.search);
 const status = document.getElementById('form-status');
 
-if (params.get('mail_error') === '1') {
+if (params.get('captcha_error') === '1') {
+    status.textContent = 'La réponse au calcul est incorrecte. Veuillez réessayer.';
+} else if (params.get('mail_error') === '1') {
     status.textContent =
         'Votre demande est enregistrée, mais l’e-mail n’a pas pu être envoyé.';
 
