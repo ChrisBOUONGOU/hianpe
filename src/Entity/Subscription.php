@@ -12,7 +12,7 @@ class Subscription {
     #[ORM\JoinColumn(nullable:false,onDelete:'CASCADE')] private ?User $user=null;
     #[ORM\Column(length:40)] private string $productKey;
     #[ORM\Column(length:100)] private string $stripeCustomerId;
-    #[ORM\Column(length:100,unique:true)] private string $stripeSubscriptionId;
+    #[ORM\Column(length:100)] private string $stripeSubscriptionId;
     #[ORM\Column(length:40)] private string $status='incomplete';
     #[ORM\Column(type:Types::DATETIME_IMMUTABLE,nullable:true)] private ?\DateTimeImmutable $trialEndsAt=null;
     #[ORM\Column(type:Types::DATETIME_IMMUTABLE,nullable:true)] private ?\DateTimeImmutable $currentPeriodEndsAt=null;
