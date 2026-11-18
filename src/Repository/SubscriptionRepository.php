@@ -12,7 +12,7 @@ class SubscriptionRepository extends ServiceEntityRepository {
     public function findActiveForProduct(User $user,string $key):?Subscription{
         return $this->createQueryBuilder('s')->andWhere('s.user=:user')->andWhere('s.productKey=:product')
             ->andWhere('s.status IN (:statuses)')->setParameter('user',$user)->setParameter('product',$key)
-            ->setParameter('statuses',['trialing','active','past_due','incomplete'])->orderBy('s.createdAt','DESC')
+            ->setParameter('statuses',['trialing','active','past_due','unpaid'])->orderBy('s.createdAt','DESC')
             ->setMaxResults(1)->getQuery()->getOneOrNullResult();
     }
     public function findByStripeId(string $id):?Subscription{return $this->findOneBy(['stripeSubscriptionId'=>$id]);}
