@@ -30,11 +30,11 @@ class Subscription {
     public function setStripeSubscriptionId(string $v):static{$this->stripeSubscriptionId=$v;return $this;}
     public function getStatus():string{return $this->status;}
     public function setStatus(string $v):static{$this->status=$v;return $this;}
-    public function getTrialEndsAt():?\\DateTimeImmutable{return $this->trialEndsAt;}
-    public function setTrialEndsAt(?\\DateTimeImmutable $v):static{$this->trialEndsAt=$v;return $this;}
-    public function getCurrentPeriodEndsAt():?\\DateTimeImmutable{return $this->currentPeriodEndsAt;}
-    public function setCurrentPeriodEndsAt(?\\DateTimeImmutable $v):static{$this->currentPeriodEndsAt=$v;return $this;}
+    public function getTrialEndsAt():?\DateTimeImmutable{return $this->trialEndsAt;}
+    public function setTrialEndsAt(?\DateTimeImmutable $v):static{$this->trialEndsAt=$v;return $this;}
+    public function getCurrentPeriodEndsAt():?\DateTimeImmutable{return $this->currentPeriodEndsAt;}
+    public function setCurrentPeriodEndsAt(?\DateTimeImmutable $v):static{$this->currentPeriodEndsAt=$v;return $this;}
     public function isCancelAtPeriodEnd():bool{return $this->cancelAtPeriodEnd;}
     public function setCancelAtPeriodEnd(bool $v):static{$this->cancelAtPeriodEnd=$v;return $this;}
-    public function getCreatedAt():\\DateTimeImmutable{return $this->createdAt;}
+    public function getCreatedAt():\DateTimeImmutable{return $this->createdAt;}
 }
