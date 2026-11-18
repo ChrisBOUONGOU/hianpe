@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Créer un compte — Hianpe{% endblock %}
+{% block body %}
+<style>
+.auth-wrap{min-height:100vh;background:#f5f0e6;display:grid;place-items:center;padding:32px 16px;color:#171714;font-family:Inter,system-ui,sans-serif}.auth-card{width:min(100%,480px);background:#fffdf8;border:1px solid #e5ddcf;border-radius:24px;padding:36px;box-shadow:0 20px 60px #17171412}.auth-card h1{font-size:2rem;letter-spacing:-.05em;margin:14px 0 8px}.auth-card p{color:#6f6b62;margin-bottom:24px}.auth-card label{display:block;font-weight:700;margin:16px 0 7px}.auth-card input{width:100%;padding:13px 14px;border:1px solid #d8d0c2;border-radius:11px;font:inherit}.auth-card button{width:100%;margin-top:22px;border:0;border-radius:999px;background:#171714;color:white;padding:14px;font:inherit;font-weight:800;cursor:pointer}.auth-error{background:#fff0ed;color:#9c2d1d;padding:12px;border-radius:10px;margin:15px 0}.auth-foot{text-align:center;margin-top:20px;font-size:.9rem}.auth-foot a{font-weight:800;color:#80620c}
+</style>
+<div class="auth-wrap"><main class="auth-card"><a href="/">← Hianpe</a><h1>Créer ton compte</h1><p>Un seul compte pour gérer tes logiciels et tes abonnements Hianpe.</p>
+{% if error_message %}<div class="auth-error">{{ error_message }}</div>{% endif %}
+<form method="post"><input type="hidden" name="_token" value="{{ csrf_token('register') }}">
+<label for="email">Adresse courriel</label><input id="email" name="email" type="email" autocomplete="email" required value="{{ app.request.request.get('email') }}">
+<label for="password">Mot de passe</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="12" required>
+<label for="password_confirmation">Confirmer le mot de passe</label><input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="12" required>
+<button type="submit">Créer mon compte</button></form>
+<div class="auth-foot">Tu as déjà un compte ? <a href="{{ path('app_login') }}">Se connecter</a></div></main></div>
+{% endblock %}
