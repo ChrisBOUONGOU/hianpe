@@ -1,38 +1,14 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
-
+{% block title %}Connexion — Hianpe{% endblock %}
 {% block body %}
-    <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ logout_path() }}">Logout</a>
-            </div>
-        {% endif %}
-
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="username">Email</label>
-        <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
-        <label for="password">Password</label>
-        <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
-        <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
-
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <input type="checkbox" name="_remember_me" id="_remember_me">
-                <label for="_remember_me">Remember me</label>
-            </div>
-        #}
-
-        <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
-        </button>
-    </form>
+<style>
+.auth-wrap{min-height:100vh;background:#f5f0e6;display:grid;place-items:center;padding:32px 16px;color:#171714;font-family:Inter,system-ui,sans-serif}.auth-card{width:min(100%,460px);background:#fffdf8;border:1px solid #e5ddcf;border-radius:24px;padding:36px;box-shadow:0 20px 60px #17171412}.auth-card h1{font-size:2rem;letter-spacing:-.05em;margin:14px 0 8px}.auth-card p{color:#6f6b62;margin-bottom:24px}.auth-card label{display:block;font-weight:700;margin:16px 0 7px}.auth-card input{width:100%;padding:13px 14px;border:1px solid #d8d0c2;border-radius:11px;font:inherit}.auth-card button{width:100%;margin-top:22px;border:0;border-radius:999px;background:#171714;color:white;padding:14px;font:inherit;font-weight:800;cursor:pointer}.auth-error{background:#fff0ed;color:#9c2d1d;padding:12px;border-radius:10px;margin:15px 0}.auth-success{background:#edf7ed;color:#28602b;padding:12px;border-radius:10px;margin:15px 0}.auth-foot{text-align:center;margin-top:20px;font-size:.9rem}.auth-foot a{font-weight:800;color:#80620c}
+</style>
+<div class="auth-wrap"><main class="auth-card"><a href="/">← Hianpe</a><h1>Bienvenue</h1><p>Connecte-toi pour gérer tes logiciels et tes abonnements.</p>
+{% for message in app.flashes('success') %}<div class="auth-success">{{ message }}</div>{% endfor %}
+{% if error %}<div class="auth-error">Adresse courriel ou mot de passe incorrect.</div>{% endif %}
+<form method="post"><label for="username">Adresse courriel</label><input type="email" value="{{ last_username }}" name="_username" id="username" autocomplete="email" required autofocus>
+<label for="password">Mot de passe</label><input type="password" name="_password" id="password" autocomplete="current-password" required>
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"><button type="submit">Se connecter</button></form>
+<div class="auth-foot">Pas encore de compte ? <a href="{{ path('app_register') }}">Créer un compte</a></div></main></div>
 {% endblock %}
